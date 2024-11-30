@@ -66,35 +66,23 @@ Si un bloque en el diagrama de bloques tiene una ganancia de 1, puede ser elimin
 
 ## 4. Ejemplo de Diagrama de Bloques
 
-Imaginemos un sistema con tres bloques conectados en serie. Las funciones de transferencia de los bloques son \( G_1(s) \), \( G_2(s) \), y \( G_3(s) \). El diagrama de bloques sería algo como esto en código ASCII:
+En este ejemplo, consideramos tres bloques conectados en serie. Las funciones de transferencia de los bloques son:
 
-R(s) ---------> +--------+ +--------+ +--------+ | G1(s) |-->| G2(s) |-->| G3(s) | +--------+ +--------+ +--------+ --------------> Y(s) 
+- \( G_1(s) = \frac{5}{s+1} \)
+- \( G_2(s) = \frac{3}{s+2} \)
+- \( G_3(s) = \frac{4}{s+3} \)
 
-En este caso, la salida \( Y(s) \) es el producto de las tres funciones de transferencia:
-
-$$
-Y(s) = G_1(s) \cdot G_2(s) \cdot G_3(s) \cdot R(s)
-$$
-
-Supongamos que las funciones de transferencia de los bloques son las siguientes:
-
-- \( G_1(s) = \frac{1}{s+1} \)
-- \( G_2(s) = \frac{2}{s+2} \)
-- \( G_3(s) = \frac{3}{s+3} \)
-
-Entonces, la función de transferencia total del sistema será:
+La función de transferencia total del sistema es el producto de las tres funciones de transferencia:
 
 $$
-G(s) = G_1(s) \cdot G_2(s) \cdot G_3(s) = \frac{1}{s+1} \cdot \frac{2}{s+2} \cdot \frac{3}{s+3}
+G(s) = G_1(s) \cdot G_2(s) \cdot G_3(s)
 $$
 
-Por lo tanto, la función de transferencia del sistema es:
+Por lo tanto, la función de transferencia total del sistema será:
 
 $$
-G(s) = \frac{6}{(s+1)(s+2)(s+3)}
+G(s) = \frac{5}{s+1} \cdot \frac{3}{s+2} \cdot \frac{4}{s+3} = \frac{60}{(s+1)(s+2)(s+3)}
 $$
-
-Este ejemplo ilustra cómo se pueden combinar múltiples bloques en serie para obtener la función de transferencia total de un sistema.
 
 ## 5. Conclusión
 
