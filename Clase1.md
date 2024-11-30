@@ -94,8 +94,8 @@ $$
 
 **Solución:**
 
-- ### Ceros: s(s + 1) = 0 ⟹ s = 0, -1
-- ### Polos: (s + 1)(s + 3) = 0 ⟹ s = -1, -3
+-  **Ceros:** s(s + 1) = 0 ⟹ s = 0, -1
+-  **Polos:** (s + 1)(s + 3) = 0 ⟹ s = -1, -3
 
 ## 4. Conclusiones
 
