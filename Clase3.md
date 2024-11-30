@@ -97,7 +97,7 @@ El diagrama de bloques está estructurado de la siguiente manera:
 - **Determinante global \( \Delta \)**:
 
 $$
-\Delta = 1 - (G_1(s) H_1(s)) - (G_2(s) H_2(s)) + (G_1(s) G_2(s) H_1(s) H_2(s))
+\Delta = 1 - \left(G_1(s) H_1(s)\right) - \left(G_2(s) H_2(s)\right) + \left(G_1(s) G_2(s) H_1(s) H_2(s)\right)
 $$
 
 - **Determinante para cada camino \( \Delta_k \)**:
