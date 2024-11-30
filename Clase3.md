@@ -68,9 +68,9 @@ Si un bloque en el diagrama de bloques tiene una ganancia de 1, puede ser elimin
 
 En este ejemplo, consideramos tres bloques conectados en serie. Las funciones de transferencia de los bloques son:
 
-- \( G_1(s) = \frac{5}{s+1} \)
-- \( G_2(s) = \frac{3}{s+2} \)
-- \( G_3(s) = \frac{4}{s+3} \)
+- G₁(s) = 5 / (s + 1)
+- G₂(s) = 3 / (s + 2)
+- G₃(s) = 4 / (s + 3)
 
 La función de transferencia total del sistema es el producto de las tres funciones de transferencia:
 
