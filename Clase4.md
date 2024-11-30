@@ -1,116 +1,106 @@
-# Función de Transferencia Estableciendo la Regla de Mason
+# Función de Transferencia utilizando la Regla de Mason
 
-La **Regla de Mason** es una técnica utilizada para calcular la función de transferencia de un sistema complejo representado por un diagrama de bloques. Esta regla es particularmente útil cuando se tienen sistemas con múltiples lazos de retroalimentación y conexiones complicadas entre los bloques. La regla permite obtener la función de transferencia total del sistema de forma directa y clara, evitando la necesidad de realizar simplificaciones complicadas o manipulaciones algebraicas.
+La **Regla de Mason** es una herramienta poderosa utilizada para encontrar la función de transferencia en sistemas con retroalimentación, especialmente en aquellos sistemas representados por diagramas de bloques complejos. La regla ayuda a calcular la relación entre la entrada y la salida de un sistema tomando en cuenta los caminos directos y los lazos de retroalimentación.
 
 ## 1. ¿Qué es la Regla de Mason?
 
-La Regla de Mason es una fórmula matemática que nos permite calcular la **función de transferencia total** de un sistema, dado su diagrama de bloques. Es especialmente útil para sistemas con **retroalimentación** y **ciclos cerrados**, ya que permite incluir los efectos de estas interacciones de manera sistemática.
+La **Regla de Mason** es un método matemático utilizado para determinar la función de transferencia en sistemas con múltiples bloques interconectados, algunos de los cuales tienen retroalimentación. El objetivo es calcular cómo la señal de entrada se transforma en la señal de salida.
 
-### La fórmula general de la Regla de Mason es:
+La regla se basa en identificar **caminos directos** y **lazos de retroalimentación** dentro del sistema. Para cada camino, se debe calcular su ganancia, y para cada lazo, se debe tener en cuenta su efecto sobre el sistema.
 
-$$
-T = \frac{\text{Sumatoria de todos los caminos directos}}{\text{Sumatoria de todos los caminos con retroalimentación}}
-$$
+### 1.1 Fórmula General
 
-La función de transferencia total \( T \) se calcula sumando las contribuciones de los caminos directos e indirectos en el sistema, y considerando el impacto de los lazos de retroalimentación.
+La fórmula básica de la **Regla de Mason** para un sistema con varios bloques es la siguiente:
 
-## 2. Pasos para Aplicar la Regla de Mason
-
-### Paso 1: Identificar los **caminos directos** (Paths)
-
-Un **camino directo** es una trayectoria que va desde la entrada \( R(s) \) hasta la salida \( Y(s) \) del sistema sin pasar por ningún nodo de retroalimentación. Estos caminos deben ser identificados claramente en el diagrama de bloques.
-
-### Paso 2: Identificar los **lazos de retroalimentación** (Loops)
-
-Los **lazos de retroalimentación** son caminos cerrados que empiezan y terminan en el mismo bloque, pasando por la salida y regresando a la entrada. Es importante identificar todos los lazos de retroalimentación en el sistema.
-
-### Paso 3: Calcular el **Determinante de Mason** (Mason’s Determinant)
-
-El determinante de Mason se refiere a la suma de las contribuciones de cada camino y la influencia de los lazos de retroalimentación. Se calcula utilizando la fórmula que involucra los **campos directos** y los **lazos de retroalimentación**.
-
-### Paso 4: Aplicar la Fórmula de Mason
-
-Una vez identificados los caminos directos y los lazos de retroalimentación, se aplica la fórmula de Mason para calcular la función de transferencia total del sistema.
-
-## 3. La Fórmula de la Regla de Mason
-
-La fórmula de Mason para calcular la función de transferencia es:
-
-$$
-T = \frac{ \sum_{k} P_k \Delta_k}{ \Delta }
-$$
+\[
+T(s) = \frac{Y(s)}{R(s)} = \frac{\sum_{k} P_k \Delta_k}{\Delta}
+\]
 
 Donde:
 
-- **\( P_k \)**: Es el producto de las ganancias de los bloques a lo largo de cada camino \( k \).
-- **\( \Delta \)**: Es el determinante de Mason, que se calcula tomando en cuenta todos los lazos de retroalimentación del sistema.
-- **\( \Delta_k \)**: Es el determinante de la matriz asociada a un camino específico, excluyendo los lazos de retroalimentación que afectan a ese camino.
+- \( P_k \) es la ganancia de un camino directo.
+- \( \Delta_k \) es el determinante del sistema considerando los lazos de retroalimentación.
+- \( \Delta \) es el determinante general del sistema, tomando en cuenta todos los lazos de retroalimentación.
 
-### Determinante de Mason
+## 2. Diagrama de Bloques:
 
-El determinante de Mason \( \Delta \) se calcula como:
+En este ejemplo, consideramos un sistema con dos bloques interconectados y retroalimentación. La estructura del sistema es la siguiente:
 
-$$
-\Delta = 1 - (\text{Suma de los productos de las ganancias de los lazos de retroalimentación}) + (\text{Suma de los productos de las ganancias de los lazos de retroalimentación dobles}) - (\text{Suma de los productos de las ganancias de los lazos de retroalimentación triples}) + \dots
-$$
+- El bloque \( G_1(s) \) está conectado a un lazo de retroalimentación \( H_1(s) \).
+- El bloque \( G_2(s) \) está conectado a otro lazo de retroalimentación \( H_2(s) \).
 
-## 4. Ejemplo Práctico de la Regla de Mason
+### 2.1 Caminos Directos del Sistema:
 
-Consideremos el siguiente sistema de bloques que tiene tres caminos directos y dos lazos de retroalimentación.
+Un **camino directo** es una ruta desde la entrada hasta la salida, sin pasar por ninguna retroalimentación. En este caso, tenemos tres caminos directos:
 
-### Diagrama de Bloques:
+1. **Camino 1**: Solo el bloque \( G_1(s) \).
+2. **Camino 2**: Solo el bloque \( G_2(s) \).
+3. **Camino 3**: La combinación de ambos bloques \( G_1(s) \cdot G_2(s) \), lo que representa una interacción entre los dos bloques.
 
-- Bloque \( G_1(s) \) está conectado a un bloque de retroalimentación \( H_1(s) \).
-- Bloque \( G_2(s) \) está conectado a otro bloque de retroalimentación \( H_2(s) \).
-- Los caminos directos del sistema son:
-    1. Camino 1: \( G_1(s) \)
-    2. Camino 2: \( G_2(s) \)
-    3. Camino 3: \( G_1(s) \cdot G_2(s) \)
+### 2.2 Lazos de Retroalimentación:
 
-### Paso 1: Identificar los caminos y lazos
+Los **lazos de retroalimentación** son caminos cerrados que afectan el comportamiento del sistema. En este caso, tenemos los siguientes lazos de retroalimentación:
 
-- **Caminos directos**:
-    1. \( G_1(s) \)
-    2. \( G_2(s) \)
-    3. \( G_1(s) \cdot G_2(s) \)
+1. **Lazo 1**: El bloque de retroalimentación \( H_1(s) \) que afecta a \( G_1(s) \).
+2. **Lazo 2**: El bloque de retroalimentación \( H_2(s) \) que afecta a \( G_2(s) \).
 
-- **Lazos de retroalimentación**:
-    1. \( H_1(s) \)
-    2. \( H_2(s) \)
+### Paso 1: Identificar los Caminos y los Lazos
 
-### Paso 2: Calcular los determinantes
+**Caminos directos**:
 
-- **Determinante global \( \Delta \)**: Tomamos en cuenta los lazos de retroalimentación \( H_1(s) \) y \( H_2(s) \). La fórmula será:
+1. \( P_1 = G_1(s) \)
+2. \( P_2 = G_2(s) \)
+3. \( P_3 = G_1(s) \cdot G_2(s) \)
 
-$$
-\Delta = 1 - (G_1(s) H_1(s)) - (G_2(s) H_2(s)) + (G_1(s) G_2(s) H_1(s) H_2(s))
-$$
+**Lazos de retroalimentación**:
 
-- **Determinante para cada camino \( \Delta_k \)**: Para cada camino directo, se excluyen los lazos de retroalimentación que lo afectan. Por ejemplo, para el primer camino:
+1. \( H_1(s) \)
+2. \( H_2(s) \)
 
-$$
-\Delta_1 = 1 - (G_1(s) H_1(s))
-$$
+## 3. Regla de Mason:
 
-Para el segundo camino:
+La **Regla de Mason** se utiliza para calcular la función de transferencia total, considerando los caminos directos y los efectos de los lazos de retroalimentación. Para este sistema con retroalimentación, se utilizarían las ganancias de cada camino y la interacción de los lazos.
 
-$$
-\Delta_2 = 1 - (G_2(s) H_2(s))
-$$
+### 3.1 Determinante \( \Delta \)
 
-### Paso 3: Aplicar la fórmula de Mason
+El determinante \( \Delta \) es una expresión que representa el efecto combinado de todos los lazos de retroalimentación del sistema. Se calcula considerando todos los lazos de retroalimentación y sus interacciones.
 
-Finalmente, aplicamos la fórmula de Mason para obtener la función de transferencia \( T \) del sistema:
+### 3.2 Determinante \( \Delta_k \) para cada camino
 
-$$
-T = \frac{ P_1 \Delta_1 + P_2 \Delta_2 + P_3 \Delta_3}{ \Delta }
-$$
+Cada camino tiene su propio determinante \( \Delta_k \), que representa la influencia de los lazos de retroalimentación sobre ese camino en particular. El cálculo de \( \Delta_k \) se realiza tomando en cuenta cómo los lazos de retroalimentación afectan ese camino específico.
 
-Donde \( P_1 \), \( P_2 \), y \( P_3 \) son los productos de las ganancias de los bloques a lo largo de cada camino.
+## 4. Ejemplo de Aplicación de la Regla de Mason
+
+Consideremos un sistema con las siguientes funciones de transferencia para los bloques:
+
+- \( G_1(s) = \frac{5}{s+1} \)
+- \( G_2(s) = \frac{3}{s+2} \)
+
+Y las retroalimentaciones:
+
+- \( H_1(s) = \frac{1}{s+4} \)
+- \( H_2(s) = \frac{2}{s+5} \)
+
+El sistema tiene tres caminos directos:
+
+1. \( G_1(s) \)
+2. \( G_2(s) \)
+3. \( G_1(s) \cdot G_2(s) \)
+
+Y dos lazos de retroalimentación:
+
+1. \( H_1(s) \)
+2. \( H_2(s) \)
+
+La función de transferencia total \( T(s) \) se obtiene utilizando la Regla de Mason:
+
+\[
+T(s) = \frac{P_1 \Delta_1 + P_2 \Delta_2 + P_3 \Delta_3}{\Delta}
+\]
+
+Donde \( P_1, P_2, \) y \( P_3 \) son las ganancias de los caminos directos, y \( \Delta \), \( \Delta_1 \), \( \Delta_2 \), y \( \Delta_3 \) son los determinantes correspondientes.
 
 ## 5. Conclusión
 
-La **Regla de Mason** es una herramienta poderosa y eficiente para calcular la función de transferencia de sistemas dinámicos complejos. Permite abordar sistemas con múltiples lazos de retroalimentación y caminos directos de una manera estructurada y ordenada. A través de su aplicación, se puede calcular la respuesta de un sistema completo sin necesidad de simplificar el diagrama de bloques de manera manual o sin errores. Esta técnica es esencial en el análisis de sistemas de control y en el diseño de controladores para mejorar la estabilidad y el rendimiento de los sistemas dinámicos.
-
-La Regla de Mason no solo facilita la obtención de la función de transferencia, sino que también ofrece una manera clara de comprender la interacción entre los diferentes componentes del sistema y cómo las señales se afectan mutuamente a lo largo del tiempo.
+La **Regla de Mason** es fundamental para el análisis de sistemas con retroalimentación. Permite calcular la función de transferencia en sistemas complejos de una manera eficiente y precisa. Al identificar los caminos directos y los lazos de retroalimentación, esta regla facilita la comprensión del comportamiento de un sistema y es una herramienta clave en el diseño y análisis de sistemas de control.
 
