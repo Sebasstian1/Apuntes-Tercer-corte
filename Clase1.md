@@ -69,6 +69,7 @@ Determina si las siguientes funciones de transferencia son impropias, estrictame
 - **Función Bipropia:** \( \text{deg}(N(s)) = 1 \), \( \text{deg}(D(s)) = 1 \)
 
 
+
 ## 4. Conclusiones
 
 La función de transferencia es una herramienta crucial en el análisis de sistemas dinámicos. Permite identificar y clasificar sistemas en función de su comportamiento. Los polos y ceros son esenciales para determinar la estabilidad y la respuesta del sistema.
