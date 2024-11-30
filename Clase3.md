@@ -58,25 +58,36 @@ $$
 
 Consideremos el siguiente sistema de bloques que tiene tres caminos directos y dos lazos de retroalimentación.
 
-### Diagrama de Bloques:
+## 2. Diagrama de Bloques
 
-- Bloque \( G_1(s) \) está conectado a un bloque de retroalimentación \( H_1(s) \).
-- Bloque \( G_2(s) \) está conectado a otro bloque de retroalimentación \( H_2(s) \).
-- Los caminos directos del sistema son:
-    1. Camino 1: \( G_1(s) \)
-    2. Camino 2: \( G_2(s) \)
-    3. Camino 3: \( G_1(s) \cdot G_2(s) \)
+En el sistema que estamos analizando, tenemos dos bloques interconectados con retroalimentación:
 
-### Paso 1: Identificar los caminos y lazos
+- **Bloque \( G_1(s) \)** está conectado a un lazo de retroalimentación \( H_1(s) \).
+- **Bloque \( G_2(s) \)** está conectado a otro lazo de retroalimentación \( H_2(s) \).
 
-- **Caminos directos**:
-    1. \( G_1(s) \)
-    2. \( G_2(s) \)
-    3. \( G_1(s) \cdot G_2(s) \)
+El diagrama de bloques está estructurado de la siguiente manera:
 
-- **Lazos de retroalimentación**:
-    1. \( H_1(s) \)
-    2. \( H_2(s) \)
+1. **Caminos Directos**: Son las rutas desde la entrada hasta la salida que no pasan por ningún lazo de retroalimentación. En este caso, los caminos directos son:
+   - **Camino 1**: El único bloque \( G_1(s) \), que transmite la señal sin ninguna retroalimentación.
+   - **Camino 2**: El único bloque \( G_2(s) \), que transmite la señal sin retroalimentación directa.
+   - **Camino 3**: La interacción entre ambos bloques \( G_1(s) \cdot G_2(s) \), que representa una combinación de señales de ambos bloques.
+
+2. **Lazos de Retroalimentación**: Son los caminos cerrados que afectan la salida del sistema al regresar parte de la señal hacia la entrada. En este sistema, tenemos dos lazos de retroalimentación:
+   - **Lazo 1**: El lazo de retroalimentación \( H_1(s) \), que afecta a \( G_1(s) \).
+   - **Lazo 2**: El lazo de retroalimentación \( H_2(s) \), que afecta a \( G_2(s) \).
+
+### Paso 1: Identificar los Caminos y Lazos
+
+**Caminos Directos**:
+
+- Camino 1: \( G_1(s) \)
+- Camino 2: \( G_2(s) \)
+- Camino 3: \( G_1(s) \cdot G_2(s) \)
+
+**Lazos de Retroalimentación**:
+
+- Lazo 1: \( H_1(s) \)
+- Lazo 2: \( H_2(s) \)
 
 ### Paso 2: Calcular los determinantes
 
