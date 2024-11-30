@@ -31,13 +31,13 @@ Determine si las siguientes funciones de transferencia son estrictamente propias
 **Solución:**
 
 1. Para \( G(s) = \frac{s^3 + 2s}{s^2 + 1} \):
-   - El numerador \(N(s)\) tiene un grado de 3.
-   - El denominador \(D(s)\) tiene un grado de 2.
+   - El numerador \(N(s)\) tiene un grado de \(3\).
+   - El denominador \(D(s)\) tiene un grado de \(2\).
    - Como el grado del numerador es mayor que el del denominador (\(3 > 2\)), la función de transferencia es **impropia**.
 
 2. Para \( G(s) = \frac{s + 1}{s + 3} \):
-   - El numerador \(N(s)\) tiene un grado de 1.
-   - El denominador \(D(s)\) tiene un grado de 1.
+   - El numerador \(N(s)\) tiene un grado de \(1\).
+   - El denominador \(D(s)\) tiene un grado de \(1\).
    - Como el grado del numerador es igual al del denominador (\(1 = 1\)), la función de transferencia es **bipropia**.
 
 ### 💡 Ejemplo 2: Polos y Ceros
@@ -66,13 +66,13 @@ Determine si las siguientes funciones de transferencia son estrictamente propias
 **Solución:**
 
 1. Para \( G(s) = \frac{s^4 + 2s^3}{s^2 + s} \):
-   - El numerador \(N(s)\) tiene un grado de 4.
-   - El denominador \(D(s)\) tiene un grado de 2.
+   - El numerador \(N(s)\) tiene un grado de \(4\).
+   - El denominador \(D(s)\) tiene un grado de \(2\).
    - Como el grado del numerador es mayor que el del denominador (\(4 > 2\)), la función de transferencia es **impropia**.
 
 2. Para \( G(s) = \frac{s + 2}{s^3 + s^2} \):
-   - El numerador \(N(s)\) tiene un grado de 1.
-   - El denominador \(D(s)\) tiene un grado de 3.
+   - El numerador \(N(s)\) tiene un grado de \(1\).
+   - El denominador \(D(s)\) tiene un grado de \(3\).
    - Como el grado del numerador es menor que el del denominador (\(1 < 3\)), la función de transferencia es **estrictamente propia**.
 
 ### 📚 Ejercicio 2:
