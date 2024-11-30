@@ -76,13 +76,13 @@ Determina si las siguientes funciones de transferencia son impropias, estrictame
 **Solución:**
 
 1. **Función Impropria:**  
-   Para \( G(s) = \frac{s^3 + 2s}{s^2 + 1} \), el grado del numerador (3) es mayor que el grado del denominador (2), por lo que esta es una **función impropia**.
+   Para G(s) = (s³ + 2s) / (s² + 1), el grado del numerador (3) es mayor que el grado del denominador (2), por lo que esta es una **función impropia**.
 
 2. **Función Bipropia:**  
-   Para \( G(s) = \frac{s + 1}{s + 3} \), el grado del numerador (1) es igual al grado del denominador (1), por lo que esta es una **función bipropia**.
+   Para G(s) = (s + 1) / (s + 3), el grado del numerador (1) es igual al grado del denominador (1), por lo que esta es una **función bipropia**.
 
 3. **Función Estrictamente Propia:**  
-   Para \( G(s) = \frac{s}{s^2 + 2s + 3} \), el grado del numerador (1) es menor que el grado del denominador (2), por lo que esta es una **función estrictamente propia**.
+   Para G(s) = s / (s² + 2s + 3), el grado del numerador (1) es menor que el grado del denominador (2), por lo que esta es una **función estrictamente propia**.
 
 ### 💡 Ejemplo 2: Cálculo de Polos y Ceros
 
