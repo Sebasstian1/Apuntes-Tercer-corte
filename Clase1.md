@@ -68,18 +68,6 @@ Determina si las siguientes funciones de transferencia son impropias, estrictame
 - **Función Impropria:** \( \text{deg}(N(s)) = 3 \), \( \text{deg}(D(s)) = 2 \)
 - **Función Bipropia:** \( \text{deg}(N(s)) = 1 \), \( \text{deg}(D(s)) = 1 \)
 
-### 💡 Ejemplo 2: Cálculo de Polos y Ceros
-
-Encuentra los polos y ceros de la función de transferencia:
-
-$$
-G(s) = \frac{s^2 + s}{s^2 + 4s + 3}
-$$
-
-**Solución:**
-
-- **Ceros:** \( s(s + 1) = 0 \quad \Rightarrow \quad s = 0, -1 \)
-- **Polos:** \( (s + 1)(s + 3) = 0 \quad \Rightarrow \quad s = -1, -3 \)
 
 ## 4. Conclusiones
 
