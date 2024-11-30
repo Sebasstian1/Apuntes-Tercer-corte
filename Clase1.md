@@ -69,9 +69,9 @@ $$
 
 Determina si las siguientes funciones de transferencia son impropias, estrictamente propias o bipropias:
 
-- G(s) = (s^3 + 2s) / (s^2 + 1)  
-- G(s) = (s + 1) / (s + 3)  
-- G(s) = s / (s^2 + 2s + 3)
+- G(s) = (s³ + 2s) / (s² + 1) 
+- G(s) = (s + 1) / (s + 3) 
+- G(s) = s / (s² + 2s + 3)
 
 **Solución:**
 
@@ -94,8 +94,8 @@ $$
 
 **Solución:**
 
-- **Ceros:** \( s(s + 1) = 0  \quad \Rightarrow \quad s = 0, -1 \)
-- **Polos:** \( (s + 1)(s + 3) = 0  \quad \Rightarrow \quad s = -1, -3 \)
+- Ceros: s(s + 1) = 0 ⟹ s = 0, -1
+- Polos: (s + 1)(s + 3) = 0 ⟹ s = -1, -3
 
 ## 4. Conclusiones
 
