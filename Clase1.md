@@ -15,27 +15,21 @@ Existen tres tipos principales de funciones de transferencia en cuanto a la rela
 #### Ejemplo de Función Impropria
 Si tenemos una función de transferencia:
 
-$$
-G(s) = \frac{s^3 + 2s}{s^2 + 1}
-$$
+\( G(s) = \frac{s^3 + 2s}{s^2 + 1} \)
 
 Aquí, el grado del numerador (3) es mayor que el grado del denominador (2), por lo que esta es una **función impropia**.
 
 #### Ejemplo de Función Bipropia
 Si tenemos una función de transferencia:
 
-$$
-G(s) = \frac{s + 1}{s + 3}
-$$
+\( G(s) = \frac{s + 1}{s + 3} \)
 
 Aquí, el grado del numerador (1) es igual al grado del denominador (1), por lo que esta es una **función bipropia**.
 
 #### Ejemplo de Función Estrictamente Propia
 Si tenemos una función de transferencia:
 
-$$
-G(s) = \frac{s}{s^2 + 2s + 3}
-$$
+\( G(s) = \frac{s + 2}{s^2 + 4} \)
 
 Aquí, el grado del numerador (1) es menor que el grado del denominador (2), por lo que esta es una **función estrictamente propia**.
 
@@ -47,21 +41,15 @@ Los **ceros** de una función de transferencia son los valores de \( s \) que ha
 
 Para la función de transferencia:
 
-$$
-G(s) = \frac{s^2 + s}{s^2 + 4s + 3}
-$$
+\( G(s) = \frac{s^2 + s}{s^2 + 4s + 3} \)
 
 **Ceros:** Los ceros de la función se encuentran al resolver:
 
-$$
-s(s + 1) = 0 \quad \Rightarrow \quad s = 0, -1
-$$
+\( s(s + 1) = 0 \quad \Rightarrow \quad s = 0, -1 \)
 
 **Polos:** Los polos de la función se encuentran al resolver:
 
-$$
-(s + 1)(s + 3) = 0 \quad \Rightarrow \quad s = -1, -3
-$$
+\( (s + 1)(s + 3) = 0 \quad \Rightarrow \quad s = -1, -3 \)
 
 ## 3. Ejemplos
 
@@ -69,25 +57,25 @@ $$
 
 Determina si las siguientes funciones de transferencia son impropias, estrictamente propias o bipropias:
 
-- $$ G(s) = \frac{s^3 + 2s}{s^2 + 1} $$  
-- $$ G(s) = \frac{s + 1}{s + 3} $$
+1. \( G(s) = \frac{s^3 + 2s}{s^2 + 1} \)
+2. \( G(s) = \frac{s + 1}{s + 3} \)
 
 **Solución:**
 
-- **Función Impropria:** \( \text{deg}(N(s)) = 3 \), \( \text{deg}(D(s)) = 2 \)
-- **Función Bipropia:** \( \text{deg}(N(s)) = 1 \), \( \text{deg}(D(s)) = 1 \)
+- La primera función tiene un numerador de grado 3 y un denominador de grado 2. Debido a que el grado del numerador es mayor que el grado del denominador, esta es una **función impropia**.
+  
+- La segunda función tiene tanto el numerador como el denominador de grado 1. Como el grado del numerador es igual al del denominador, esta es una **función bipropia**.
 
 ### 💡 Ejemplo 2: Cálculo de Polos y Ceros
 
 Encuentra los polos y ceros de la función de transferencia:
 
-$$
-G(s) = \frac{s^2 + s}{s^2 + 4s + 3}
-$$
+\( G(s) = \frac{s^2 + s}{s^2 + 4s + 3} \)
 
 **Solución:**
 
 - **Ceros:** \( s(s + 1) = 0 \quad \Rightarrow \quad s = 0, -1 \)
+  
 - **Polos:** \( (s + 1)(s + 3) = 0 \quad \Rightarrow \quad s = -1, -3 \)
 
 ## 4. Conclusiones
