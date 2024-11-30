@@ -4,15 +4,18 @@ La **Regla de Mason** es una técnica utilizada para calcular la función de tra
 
 ## 1. ¿Qué es la Regla de Mason?
 
-La Regla de Mason es una fórmula matemática que nos permite calcular la **función de transferencia total** de un sistema, dado su diagrama de bloques. Es especialmente útil para sistemas con **retroalimentación** y **ciclos cerrados**, ya que permite incluir los efectos de estas interacciones de manera sistemática.
+La **Regla de Mason** es una fórmula matemática que nos permite calcular la **función de transferencia total** de un sistema, dado su diagrama de bloques. Es especialmente útil para sistemas con **retroalimentación** y **ciclos cerrados**, ya que permite incluir los efectos de estas interacciones de manera sistemática.
 
 ### La fórmula general de la Regla de Mason es:
 
 $$
-T = \frac{\text{Sumatoria de todos los caminos directos}}{\text{Sumatoria de todos los caminos con retroalimentación}}
+T = \frac{\sum_{k} P_k \Delta_k}{\Delta}
 $$
 
-La función de transferencia total \( T \) se calcula sumando las contribuciones de los caminos directos e indirectos en el sistema, y considerando el impacto de los lazos de retroalimentación.
+Donde:
+- **\(P_k\)** es el producto de las ganancias de los bloques a lo largo de cada camino \(k\).
+- **\(\Delta\)** es el determinante global, que se calcula tomando en cuenta los lazos de retroalimentación del sistema.
+- **\(\Delta_k\)** es el determinante asociado a un camino específico \(k\), excluyendo los lazos de retroalimentación que afectan a ese camino.
 
 ## 2. Pasos para Aplicar la Regla de Mason
 
@@ -37,28 +40,28 @@ Una vez identificados los caminos directos y los lazos de retroalimentación, se
 La fórmula de Mason para calcular la función de transferencia es:
 
 $$
-T = \frac{ \sum_{k} P_k \Delta_k}{ \Delta }
+T = \frac{ P_1 \Delta_1 + P_2 \Delta_2 + P_3 \Delta_3}{\Delta}
 $$
 
 Donde:
 
-- **\( P_k \)**: Es el producto de las ganancias de los bloques a lo largo de cada camino \( k \).
-- **\( \Delta \)**: Es el determinante de Mason, que se calcula tomando en cuenta todos los lazos de retroalimentación del sistema.
-- **\( \Delta_k \)**: Es el determinante de la matriz asociada a un camino específico, excluyendo los lazos de retroalimentación que afectan a ese camino.
+- **\(P_1\)**, **\(P_2\)**, **\(P_3\)** son los productos de las ganancias de los bloques a lo largo de cada camino.
+- **\(\Delta\)** es el determinante global.
+- **\(\Delta_1\)**, **\(\Delta_2\)**, **\(\Delta_3\)** son los determinantes asociados a cada camino.
 
 ### Determinante de Mason
 
-El determinante de Mason \( \Delta \) se calcula como:
+El determinante de Mason \(\Delta\) se calcula como:
 
 $$
-\Delta = 1 - (\text{Suma de los productos de las ganancias de los lazos de retroalimentación}) + (\text{Suma de los productos de las ganancias de los lazos de retroalimentación dobles}) - (\text{Suma de los productos de las ganancias de los lazos de retroalimentación triples}) + \dots
+\Delta = 1 - \left(G_1(s) H_1(s)\right) - \left(G_2(s) H_2(s)\right) + \left(G_1(s) G_2(s) H_1(s) H_2(s)\right)
 $$
 
 ## 4. Ejemplo Práctico de la Regla de Mason
 
 Consideremos el siguiente sistema de bloques que tiene tres caminos directos y dos lazos de retroalimentación.
 
-## 2. Diagrama de Bloques
+### Diagrama de Bloques
 
 En el sistema que estamos analizando, tenemos dos bloques interconectados con retroalimentación:
 
@@ -67,14 +70,14 @@ En el sistema que estamos analizando, tenemos dos bloques interconectados con re
 
 El diagrama de bloques está estructurado de la siguiente manera:
 
-1. **Caminos Directos**: Son las rutas desde la entrada hasta la salida que no pasan por ningún lazo de retroalimentación. En este caso, los caminos directos son:
-   - **Camino 1**: El único bloque \( G_1(s) \), que transmite la señal sin ninguna retroalimentación.
-   - **Camino 2**: El único bloque \( G_2(s) \), que transmite la señal sin retroalimentación directa.
-   - **Camino 3**: La interacción entre ambos bloques \( G_1(s) \cdot G_2(s) \), que representa una combinación de señales de ambos bloques.
+1. **Caminos Directos**:
+   - Camino 1: \( G_1(s) \)
+   - Camino 2: \( G_2(s) \)
+   - Camino 3: \( G_1(s) \cdot G_2(s) \)
 
-2. **Lazos de Retroalimentación**: Son los caminos cerrados que afectan la salida del sistema al regresar parte de la señal hacia la entrada. En este sistema, tenemos dos lazos de retroalimentación:
-   - **Lazo 1**: El lazo de retroalimentación \( H_1(s) \), que afecta a \( G_1(s) \).
-   - **Lazo 2**: El lazo de retroalimentación \( H_2(s) \), que afecta a \( G_2(s) \).
+2. **Lazos de Retroalimentación**:
+   - Lazo 1: \( H_1(s) \)
+   - Lazo 2: \( H_2(s) \)
 
 ### Paso 1: Identificar los Caminos y Lazos
 
@@ -91,19 +94,21 @@ El diagrama de bloques está estructurado de la siguiente manera:
 
 ### Paso 2: Calcular los determinantes
 
-- **Determinante global \( \Delta \)**: Tomamos en cuenta los lazos de retroalimentación \( H_1(s) \) y \( H_2(s) \). La fórmula será:
+- **Determinante global \( \Delta \)**:
 
 $$
 \Delta = 1 - (G_1(s) H_1(s)) - (G_2(s) H_2(s)) + (G_1(s) G_2(s) H_1(s) H_2(s))
 $$
 
-- **Determinante para cada camino \( \Delta_k \)**: Para cada camino directo, se excluyen los lazos de retroalimentación que lo afectan. Por ejemplo, para el primer camino:
+- **Determinante para cada camino \( \Delta_k \)**:
+
+Para el camino 1:
 
 $$
 \Delta_1 = 1 - (G_1(s) H_1(s))
 $$
 
-Para el segundo camino:
+Para el camino 2:
 
 $$
 \Delta_2 = 1 - (G_2(s) H_2(s))
