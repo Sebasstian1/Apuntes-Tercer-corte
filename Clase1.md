@@ -69,7 +69,7 @@ $$
 
 Determina si las siguientes funciones de transferencia son impropias, estrictamente propias o bipropias:
 
-- G(s) = (s³ + 2s) / (s² + 1) 
+- G(s) = \frac{s^3 + 2s}{s^2 +  1}
 - G(s) = (s + 1) / (s + 3) 
 - G(s) = s / (s² + 2s + 3)
 
