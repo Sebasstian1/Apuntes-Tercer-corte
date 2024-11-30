@@ -12,13 +12,42 @@ Este tipo de diagrama es utilizado principalmente en el análisis de sistemas de
 
 La **función de transferencia** es una representación matemática que describe la relación entre la entrada y la salida de un sistema lineal y tiempo-invariante (LTI). En el contexto de los diagramas de bloques, cada bloque tiene una función de transferencia que describe cómo la señal de entrada se transforma en salida.
 
-Por ejemplo, si un sistema tiene tres bloques en serie, cada uno con su propia función de transferencia, la función de transferencia total del sistema es el producto de las funciones de transferencia de los bloques:
+En general, la función de transferencia se define como la relación entre la **salida** \( Y(s) \) y la **entrada** \( R(s) \) en el dominio de Laplace:
+
+$$
+G(s) = \frac{Y(s)}{R(s)}
+$$
+
+Donde:
+- \( G(s) \) es la función de transferencia del sistema.
+- \( Y(s) \) es la salida del sistema en el dominio de Laplace.
+- \( R(s) \) es la entrada del sistema en el dominio de Laplace.
+
+### Ejemplo de un Sistema de Tres Bloques
+
+Consideremos un sistema con tres bloques en serie. Las funciones de transferencia de los bloques son:
+
+- G₁(s) = 5 / (s + 1)
+- G₂(s) = 3 / (s + 2)
+- G₃(s) = 4 / (s + 3)
+
+La **función de transferencia total** del sistema es el producto de las funciones de transferencia de los bloques:
 
 $$
 G(s) = G_1(s) \cdot G_2(s) \cdot G_3(s)
 $$
 
-Donde \( G_1(s), G_2(s), \) y \( G_3(s) \) son las funciones de transferencia de los bloques individuales.
+Sustituyendo las funciones de transferencia:
+
+$$
+G(s) = \frac{5}{s+1} \cdot \frac{3}{s+2} \cdot \frac{4}{s+3}
+$$
+
+Por lo tanto, la **función de transferencia total** del sistema es:
+
+$$
+G(s) = \frac{60}{(s+1)(s+2)(s+3)}
+$$
 
 ## 3. Reglas Importantes en Diagramas de Bloques
 
@@ -64,26 +93,6 @@ Si los bloques están en serie (una señal de salida de un bloque se convierte e
 
 Si un bloque en el diagrama de bloques tiene una ganancia de 1, puede ser eliminado sin cambiar el comportamiento del sistema, ya que su función de transferencia no afecta a la señal.
 
-## 4. Ejemplo de Diagrama de Bloques
-
-En este ejemplo, consideramos tres bloques conectados en serie. Las funciones de transferencia de los bloques son:
-
-- G₁(s) = 5 / (s + 1)
-- G₂(s) = 3 / (s + 2)
-- G₃(s) = 4 / (s + 3)
-
-La función de transferencia total del sistema es el producto de las tres funciones de transferencia:
-
-$$
-G(s) = G_1(s) \cdot G_2(s) \cdot G_3(s)
-$$
-
-Por lo tanto, la función de transferencia total del sistema será:
-
-$$
-G(s) = \frac{5}{s+1} \cdot \frac{3}{s+2} \cdot \frac{4}{s+3} = \frac{60}{(s+1)(s+2)(s+3)}
-$$
-
-## 5. Conclusión
+## 4. Conclusión
 
 Los **diagramas de bloques** son una excelente herramienta para analizar sistemas de control y dinámicos, ya que permiten visualizar cómo las señales se transfieren y transforman dentro del sistema. Usar diagramas de bloques para calcular la **función de transferencia** de un sistema ayuda a comprender su comportamiento global y a realizar ajustes en el diseño o control del sistema para mejorar su desempeño.
