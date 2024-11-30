@@ -1,102 +1,91 @@
 # Función de Transferencia
 
-La función de transferencia es una herramienta fundamental en el análisis de sistemas dinámicos. Representa la relación entre la salida y la entrada de un sistema lineal e invariante en el tiempo (LTI) en el dominio de Laplace. Esta herramienta permite analizar la estabilidad, respuesta en frecuencia y el comportamiento global del sistema.
+La función de transferencia es una representación matemática de la relación entre la salida y la entrada de un sistema dinámico, en el dominio de Laplace. Es una herramienta fundamental en el análisis y diseño de sistemas de control, ya que permite estudiar el comportamiento del sistema ante diferentes entradas.
 
-## 1. Clasificación de las Funciones de Transferencia
+## 1. Tipos de Funciones de Transferencia
 
-### 1.1 Función de Transferencia Impropia
-Una función de transferencia es impropia si el grado del numerador es mayor que el grado del denominador.
+### 1.1 Funciones Impropias, Estrictamente Propias y Bipropias
 
-### 1.2 Función de Transferencia Bipropia
-Una función de transferencia es bipropia si el grado del numerador es igual al grado del denominador.
+Existen tres tipos principales de funciones de transferencia en cuanto a la relación entre los grados del numerador y el denominador:
 
-### 1.3 Función de Transferencia Estrictamente Propia
-Una función de transferencia es estrictamente propia si el grado del numerador es menor que el grado del denominador.
+- **Función Impropria:** Cuando el grado del numerador es mayor que el grado del denominador.
+- **Función Estrictamente Propia:** Cuando el grado del numerador es menor que el grado del denominador.
+- **Función Bipropia:** Cuando el grado del numerador es igual al grado del denominador.
 
-## 2. Polos y Ceros
+#### Ejemplo de Función Impropria
+Si tenemos una función de transferencia:
 
-Los polos y ceros de una función de transferencia son esenciales para determinar la respuesta y estabilidad de un sistema.
+$$
+G(s) = \frac{s^3 + 2s}{s^2 + 1}
+$$
 
-- **Polos**: Valores de \(s\) que anulan el denominador \(D(s)\), es decir, hacen que \(D(s) = 0\).
-- **Ceros**: Valores de \(s\) que anulan el numerador \(N(s)\), es decir, hacen que \(N(s) = 0\).
+Aquí, el grado del numerador (3) es mayor que el grado del denominador (2), por lo que esta es una **función impropia**.
+
+#### Ejemplo de Función Bipropia
+Si tenemos una función de transferencia:
+
+$$
+G(s) = \frac{s + 1}{s + 3}
+$$
+
+Aquí, el grado del numerador (1) es igual al grado del denominador (1), por lo que esta es una **función bipropia**.
+
+## 2. Polos y Ceros de una Función de Transferencia
+
+Los **ceros** de una función de transferencia son los valores de \( s \) que hacen que el numerador sea igual a cero, mientras que los **polos** son los valores de \( s \) que hacen que el denominador sea igual a cero.
+
+### Ejemplo de Polos y Ceros
+
+Para la función de transferencia:
+
+$$
+G(s) = \frac{s^2 + s}{s^2 + 4s + 3}
+$$
+
+**Ceros:** Los ceros de la función se encuentran al resolver:
+
+$$
+s(s + 1) = 0 \quad \Rightarrow \quad s = 0, -1
+$$
+
+**Polos:** Los polos de la función se encuentran al resolver:
+
+$$
+(s + 1)(s + 3) = 0 \quad \Rightarrow \quad s = -1, -3
+$$
 
 ## 3. Ejemplos
 
 ### 💡 Ejemplo 1: Clasificación de Funciones de Transferencia
-Determine si las siguientes funciones de transferencia son estrictamente propias, impropias o bipropias:
 
-1. \( G(s) = \frac{s^3 + 2s}{s^2 + 1} \)
-2. \( G(s) = \frac{s + 1}{s + 3} \)
+Determina si las siguientes funciones de transferencia son impropias, estrictamente propias o bipropias:
 
-**Solución:**
-
-1. Para \( G(s) = \frac{s^3 + 2s}{s^2 + 1} \):
-   - El numerador \(N(s)\) tiene un grado de \(3\).
-   - El denominador \(D(s)\) tiene un grado de \(2\).
-   - Como el grado del numerador es mayor que el del denominador (\(3 > 2\)), la función de transferencia es **impropia**.
-
-2. Para \( G(s) = \frac{s + 1}{s + 3} \):
-   - El numerador \(N(s)\) tiene un grado de \(1\).
-   - El denominador \(D(s)\) tiene un grado de \(1\).
-   - Como el grado del numerador es igual al del denominador (\(1 = 1\)), la función de transferencia es **bipropia**.
-
-### 💡 Ejemplo 2: Polos y Ceros
-Encuentre los polos y ceros de la función \( G(s) = \frac{s^2 + s}{s^2 + 4s + 3} \).
+- $$ G(s) = \frac{s^3 + 2s}{s^2 + 1} $$  
+- $$ G(s) = \frac{s + 1}{s + 3} $$
 
 **Solución:**
 
-1. **Ceros:** Los ceros se encuentran resolviendo \(N(s) = 0\):
-   \[
-   s^2 + s = s(s + 1) = 0 \implies s = 0, -1.
-   \]
+- **Función Impropria:** \( \text{deg}(N(s)) = 3 \), \( \text{deg}(D(s)) = 2 \)
+- **Función Bipropia:** \( \text{deg}(N(s)) = 1 \), \( \text{deg}(D(s)) = 1 \)
 
-2. **Polos:** Los polos se encuentran resolviendo \(D(s) = 0\):
-   \[
-   s^2 + 4s + 3 = (s + 1)(s + 3) = 0 \implies s = -1, -3.
-   \]
+### 💡 Ejemplo 2: Cálculo de Polos y Ceros
 
-## 4. Ejercicios
+Encuentra los polos y ceros de la función de transferencia:
 
-### 📚 Ejercicio 1:
-Determine si las siguientes funciones de transferencia son estrictamente propias, impropias o bipropias:
-
-1. \( G(s) = \frac{s^4 + 2s^3}{s^2 + s} \)
-2. \( G(s) = \frac{s + 2}{s^3 + s^2} \)
+$$
+G(s) = \frac{s^2 + s}{s^2 + 4s + 3}
+$$
 
 **Solución:**
 
-1. Para \( G(s) = \frac{s^4 + 2s^3}{s^2 + s} \):
-   - El numerador \(N(s)\) tiene un grado de \(4\).
-   - El denominador \(D(s)\) tiene un grado de \(2\).
-   - Como el grado del numerador es mayor que el del denominador (\(4 > 2\)), la función de transferencia es **impropia**.
+- **Ceros:** \( s(s + 1) = 0 \quad \Rightarrow \quad s = 0, -1 \)
+- **Polos:** \( (s + 1)(s + 3) = 0 \quad \Rightarrow \quad s = -1, -3 \)
 
-2. Para \( G(s) = \frac{s + 2}{s^3 + s^2} \):
-   - El numerador \(N(s)\) tiene un grado de \(1\).
-   - El denominador \(D(s)\) tiene un grado de \(3\).
-   - Como el grado del numerador es menor que el del denominador (\(1 < 3\)), la función de transferencia es **estrictamente propia**.
+## 4. Conclusiones
 
-### 📚 Ejercicio 2:
-Encuentre los polos y ceros de la función \( G(s) = \frac{s^3 + s^2}{s^2 + 2s + 1} \).
+La función de transferencia es una herramienta crucial en el análisis de sistemas dinámicos. Permite identificar y clasificar sistemas en función de su comportamiento. Los polos y ceros son esenciales para determinar la estabilidad y la respuesta del sistema.
 
-**Solución:**
-
-1. **Ceros:** Resolviendo \(N(s) = 0\):
-   \[
-   s^3 + s^2 = s^2(s + 1) = 0 \implies s = 0, 0, -1.
-   \]
-
-2. **Polos:** Resolviendo \(D(s) = 0\):
-   \[
-   s^2 + 2s + 1 = (s + 1)^2 = 0 \implies s = -1, -1.
-   \]
-
-## 5. Conclusiones
-
-- La función de transferencia es una herramienta fundamental para analizar sistemas dinámicos.
-- La clasificación en estrictamente propias, impropias y bipropias depende de la relación entre los grados del numerador y el denominador.
-- Los polos y ceros influyen directamente en la estabilidad y respuesta de un sistema.
-
-## 6. Referencias
+## 5. Referencias
 
 - Ogata, K. (2010). *Ingeniería de Control Moderno*. Pearson.
 - Dorf, R. C., & Bishop, R. H. (2017). *Sistemas de Control Moderno*. Prentice Hall.
