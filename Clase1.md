@@ -87,3 +87,4 @@ La función de transferencia es una herramienta crucial en el análisis de siste
 - Ogata, K. (2010). *Ingeniería de Control Moderno*. Pearson.
 - Dorf, R. C., & Bishop, R. H. (2017). *Sistemas de Control Moderno*. Prentice Hall.
 - Documentación de MATLAB: MathWorks.
+
