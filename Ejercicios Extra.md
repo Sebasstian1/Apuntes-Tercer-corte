@@ -11,39 +11,57 @@ Determinar la función de transferencia total \( C(s)/R(s) \) del sistema dado.
 ## Solución Paso a Paso
 
 ### Paso 1: Identificación de elementos clave
-En este sistema, los elementos clave son:
-- **Entrada**: R(s), la señal de entrada.
-- **Salida**: C(s), la señal de salida.
+El sistema incluye:
+- **Entrada**: R(s).
+- **Salida**: C(s).
 - **Bloques individuales**:
-  - \( G_1 \): Bloque directo desde R(s) hacia la salida.
-  - \( G_2 \): Bloque paralelo a \( G_1 \).
-  - \( G_3 \): Bloque que conecta \( G_2 \) con la retroalimentación.
-  - \( G_4 \): Bloque en el lazo de retroalimentación negativa.
+  - G1: Bloque directo desde R(s) hacia la salida.
+  - G2: Bloque paralelo a G1.
+  - G3: Bloque que conecta G2 con la retroalimentación.
+  - G4: Bloque en el lazo de retroalimentación negativa.
 
 ---
 
 ### Paso 2: Simplificación de las ramas paralelas
-Los bloques \( G_1 \) y \( G_2 \) están en una configuración de ramas paralelas. Para combinar estos bloques, sumamos sus ganancias. El bloque equivalente a la configuración en paralelo se denomina **Ganancia Paralela**. Esto simplifica la combinación de los dos bloques en uno solo.
+Los bloques G1 y G2 están en una configuración de ramas paralelas. Para combinarlas, utilizamos la fórmula:
+
+**Ganancia Paralela = G1 + G2**
+
+Esto crea un único bloque equivalente, denominado **Ganancia Paralela**.
 
 ---
 
 ### Paso 3: Análisis del lazo de retroalimentación
-El sistema tiene un lazo de retroalimentación negativa, que involucra los bloques \( G_3 \) y \( G_4 \). La retroalimentación negativa afecta la función de transferencia del sistema. La retroalimentación total se calcula multiplicando las ganancias \( G_3 \) y \( G_4 \), y luego combinándola con la ganancia paralela de los bloques \( G_1 \) y \( G_2 \).
+El sistema incluye un lazo de retroalimentación negativa con los bloques G3 y G4. Para simplificar este lazo, usamos la fórmula:
+
+**Ganancia Total del Sistema = Ganancia Directa / (1 + Ganancia Directa * Retroalimentación Total)**
+
+En este caso:
+- **Ganancia Directa** = Ganancia Paralela
+- **Retroalimentación Total** = G3 * G4
+
+Sustituyendo, obtenemos:
+
+**Ganancia Total del Sistema = (G1 + G2) / [1 + (G1 + G2) * (G3 * G4)]**
 
 ---
 
 ### Paso 4: Función de transferencia total
-La función de transferencia del sistema se obtiene dividiendo la ganancia paralela (es decir, la suma de \( G_1 \) y \( G_2 \)) por una expresión que incluye tanto la ganancia paralela como la retroalimentación total. Esta fórmula describe cómo la salida \( C(s) \) responde a la entrada \( R(s) \), considerando la interacción de los bloques dentro del sistema.
+Finalmente, la función de transferencia total del sistema es:
+
+**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * (G3 * G4)]**
 
 ---
 
 ## Resultado Final
-La función de transferencia total del sistema se obtiene como resultado de la simplificación de los bloques en paralelo y la retroalimentación negativa.
+La función de transferencia total es:
+
+**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * (G3 * G4)]**
 
 ---
 
 ## Conclusiones
-1. El diagrama de bloques se simplificó de manera eficiente aplicando las propiedades de combinación de bloques en paralelo y retroalimentación negativa.
-2. La función de transferencia obtenida muestra cómo la salida \( C(s) \) se relaciona con la entrada \( R(s) \), teniendo en cuenta las interacciones dentro del sistema.
-3. Este proceso de simplificación es útil para sistemas más complejos, permitiendo un análisis más directo de su comportamiento.
-4. El método puede ser aplicado a cualquier sistema con configuraciones de bloques similares para obtener la función de transferencia total de manera clara y estructurada.
+1. El diagrama de bloques fue simplificado de manera eficiente aplicando las propiedades de combinaciones en paralelo y retroalimentación negativa.
+2. El uso de conceptos como **Ganancia Directa** y **Retroalimentación Total** permitió reducir el sistema a una fórmula única, facilitando el análisis.
+3. Este método puede aplicarse a sistemas similares con configuraciones de bloques más complejas, siguiendo los pasos de simplificación uno a uno.
+4. La función de transferencia obtenida describe cómo la salida \( C(s) \) responde a una entrada \( R(s) \) considerando todas las interacciones internas del sistema.
