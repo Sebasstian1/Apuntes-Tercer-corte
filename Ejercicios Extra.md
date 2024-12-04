@@ -25,41 +25,44 @@ El sistema incluye:
 ### Paso 2: Simplificación de las ramas paralelas
 Los bloques G1 y G2 están en una configuración de ramas paralelas. Para combinarlas, utilizamos la fórmula:
 
-**G_paralela = G1 + G2**
+**Ganancia Paralela = G1 + G2**
 
-Esto crea un único bloque equivalente, denominado **G_paralela**.
+Esto crea un único bloque equivalente, denominado **Ganancia Paralela**.
 
 ---
 
 ### Paso 3: Análisis del lazo de retroalimentación
 El sistema incluye un lazo de retroalimentación negativa con los bloques G3 y G4. Para simplificar este lazo, usamos la fórmula:
 
-**G_retro = G_directa / (1 + G_directa * G_feedback)**
+**Ganancia Total del Sistema = Ganancia Directa / (1 + Ganancia Directa * Retroalimentación Total)**
 
 En este caso:
-- G_directa = G_paralela
-- G_feedback = G3 * G4
+- **Ganancia Directa** = Ganancia Paralela
+- **Retroalimentación Total** = G3 * G4
 
 Sustituyendo, obtenemos:
 
-**G_retro = (G1 + G2) / [1 + (G1 + G2) * G3 * G4]**
+**Ganancia Total del Sistema = (G1 + G2) / [1 + (G1 + G2) * (G3 * G4)]**
 
 ---
 
 ### Paso 4: Función de transferencia total
 Finalmente, la función de transferencia total del sistema es:
 
-**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * G3 * G4]**
+**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * (G3 * G4)]**
 
 ---
 
 ## Resultado Final
 La función de transferencia total es:
 
-**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * G3 * G4]**
+**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * (G3 * G4)]**
 
 ---
 
 ## Notas
 - Este procedimiento detalla cada paso necesario para simplificar el diagrama de bloques.
-- El resultado es simbólico y puede adaptarse a sistemas similares modificando los valores de G1, G2, G3 y G4.
+- Los términos han sido simplificados para mayor claridad:
+  - **Retroalimentación Total** se refiere a \( G3 \cdot G4 \).
+  - **Ganancia Directa** es \( G1 + G2 \).
+- Este método es general y puede aplicarse a sistemas similares.
