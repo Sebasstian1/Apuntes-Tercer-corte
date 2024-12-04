@@ -1,7 +1,7 @@
 # Resolución de Diagrama de Bloques
 
 ## Objetivo
-Determinar la función de transferencia total \( \frac{C(s)}{R(s)} \) del sistema dado.
+Determinar la función de transferencia total \( C(s)/R(s) \) del sistema dado.
 
 ## Diagrama Inicial
 *(Incluye aquí el diagrama de bloques proporcionado como una imagen).*
@@ -23,18 +23,18 @@ El sistema incluye:
 ---
 
 ### Paso 2: Simplificación de las ramas paralelas
-Los bloques \( G_1 \) y \( G_2 \) están en una configuración de ramas paralelas. Para combinarlas, utilizamos la fórmula de suma de ramas paralelas:
+Los bloques \( G_1 \) y \( G_2 \) están en una configuración de **ramas paralelas**. Para combinarlas, utilizamos la fórmula de suma de ramas paralelas:
 
 \[
 G_{\text{paralela}} = G_1 + G_2
 \]
 
-Esto crea un único bloque equivalente \( G_{\text{paralela}} \).
+Esto crea un único bloque equivalente denominado \( G_{\text{paralela}} \).
 
 ---
 
 ### Paso 3: Análisis del lazo de retroalimentación
-El sistema incluye una retroalimentación negativa con los bloques \( G_3 \) y \( G_4 \). Para simplificar este lazo, aplicamos la fórmula de retroalimentación negativa:
+El sistema incluye una **retroalimentación negativa** con los bloques \( G_3 \) y \( G_4 \). Para simplificar este lazo, aplicamos la fórmula de retroalimentación negativa:
 
 \[
 G_{\text{retroalimentación}} = \frac{G_{\text{directa}}}{1 + G_{\text{directa}} \cdot G_{\text{retroalimentación}}}
@@ -53,7 +53,7 @@ G_{\text{retroalimentación}} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot G_3 \cdot
 ---
 
 ### Paso 4: Función de transferencia total
-Finalmente, la función de transferencia total \( \frac{C(s)}{R(s)} \) es igual a \( G_{\text{retroalimentación}} \):
+Finalmente, la función de transferencia total \( C(s)/R(s) \) es igual a \( G_{\text{retroalimentación}} \):
 
 \[
 \frac{C(s)}{R(s)} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot G_3 \cdot G_4}
@@ -62,7 +62,7 @@ Finalmente, la función de transferencia total \( \frac{C(s)}{R(s)} \) es igual 
 ---
 
 ## Resultado Final
-La función de transferencia total del sistema es:
+La **función de transferencia total** del sistema es:
 
 \[
 \frac{C(s)}{R(s)} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot G_3 \cdot G_4}
@@ -73,6 +73,4 @@ La función de transferencia total del sistema es:
 ## Notas
 - Este procedimiento detalla cada paso necesario para simplificar el diagrama de bloques y encontrar la función de transferencia.
 - El resultado es completamente simbólico y puede adaptarse a sistemas similares cambiando los valores de \( G_1, G_2, G_3, \) y \( G_4 \).
-
-
 
