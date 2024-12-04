@@ -25,38 +25,28 @@ El sistema incluye:
 ### Paso 2: Simplificación de las ramas paralelas
 Los bloques \( G_1 \) y \( G_2 \) están en una configuración de ramas paralelas. Para combinarlas, utilizamos la fórmula:
 
-**Ganancia Paralela = \( G_1 + G_2 \)**
+\[
+G_{\text{paralela}} = G_1 + G_2
+\]
 
-Esto crea un único bloque equivalente, denominado **Ganancia Paralela**.
+Esto crea un único bloque equivalente denominado **Ganancia Paralela**.
 
 ---
 
 ### Paso 3: Análisis del lazo de retroalimentación
-El sistema incluye un lazo de retroalimentación negativa con los bloques \( G_3 \) y \( G_4 \). Debido a que la retroalimentación es negativa, la ganancia de retroalimentación es \( G_3 - G_4 \).
-
-Usamos la fórmula estándar para la función de transferencia de un sistema con retroalimentación negativa:
+El sistema incluye un lazo de retroalimentación negativa con los bloques \( G_3 \) y \( G_4 \). La retroalimentación se conecta de forma que la expresión para la ganancia total del sistema es:
 
 \[
-H(s) = \frac{G_{\text{paralela}}}{1 + G_{\text{paralela}} \cdot G_{\text{retroalimentación}}}
-\]
-
-Donde:
-- **Ganancia Directa** = \( G_1 + G_2 \)
-- **Retroalimentación Total** = \( G_3 - G_4 \)
-
-Sustituyendo en la fórmula, obtenemos:
-
-\[
-H(s) = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot (G_3 - G_4)}
+G_{\text{retroalimentación}} = 1 + (G_1 + G_2) \cdot G_3 \cdot G_4
 \]
 
 ---
 
 ### Paso 4: Función de transferencia total
-Finalmente, la función de transferencia total del sistema es:
+La función de transferencia total del sistema en lazo cerrado con retroalimentación negativa es:
 
 \[
-\frac{C(s)}{R(s)} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot (G_3 - G_4)}
+\frac{C(s)}{R(s)} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot G_3 \cdot G_4}
 \]
 
 ---
@@ -65,16 +55,12 @@ Finalmente, la función de transferencia total del sistema es:
 La función de transferencia total es:
 
 \[
-\frac{C(s)}{R(s)} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot (G_3 - G_4)}
+\frac{C(s)}{R(s)} = \frac{G_1 + G_2}{1 + (G_1 + G_2) \cdot G_3 \cdot G_4}
 \]
 
 ---
 
 ## Conclusiones
-1. El diagrama de bloques fue simplificado aplicando correctamente las propiedades de combinaciones en paralelo y retroalimentación negativa.
-2. La fórmula de la función de transferencia total es clara, usando **Ganancia Directa** \( G_1 + G_2 \) y la **Retroalimentación Total** \( G_3 - G_4 \) para obtener el resultado final.
-3. Este método es útil para simplificar sistemas más complejos con retroalimentación negativa, y puede ser adaptado a otros sistemas similares.
-4. La función de transferencia obtenida describe cómo la salida \( C(s) \) responde a la entrada \( R(s) \), teniendo en cuenta todas las interacciones dentro del sistema.
-
----
-
+1. El diagrama de bloques fue simplificado de manera eficiente aplicando las propiedades de combinaciones en paralelo y retroalimentación negativa.
+2. La fórmula obtenida para la función de transferencia describe cómo la salida \( C(s) \) responde a una entrada \( R(s) \), considerando todas las interacciones internas del sistema.
+3. Este proceso puede aplicarse a otros sistemas con configuraciones similares para obtener la función de transferencia total de manera clara y estructurada.
