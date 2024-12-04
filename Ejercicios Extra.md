@@ -12,65 +12,54 @@ Determinar la función de transferencia total \( C(s)/R(s) \) del sistema dado.
 
 ### Paso 1: Identificación de elementos clave
 El sistema incluye:
-- **Entrada**: \( R(s) \).
-- **Salida**: \( C(s) \).
+- **Entrada**: R(s).
+- **Salida**: C(s).
 - **Bloques individuales**:
-  - \( G1 \): Bloque directo desde \( R(s) \) hacia la salida.
-  - \( G2 \): Bloque paralelo a \( G1 \).
-  - \( G3 \): Bloque que conecta \( G2 \) con la retroalimentación.
-  - \( G4 \): Bloque en el lazo de retroalimentación negativa.
+  - G1: Bloque directo desde R(s) hacia la salida.
+  - G2: Bloque paralelo a G1.
+  - G3: Bloque que conecta G2 con la retroalimentación.
+  - G4: Bloque en el lazo de retroalimentación negativa.
 
 ---
 
 ### Paso 2: Simplificación de las ramas paralelas
-Los bloques \( G1 \) y \( G2 \) están en una configuración de **ramas paralelas**. Para combinarlas, utilizamos la fórmula de suma de ramas paralelas:
+Los bloques G1 y G2 están en una configuración de ramas paralelas. Para combinarlas, utilizamos la fórmula:
 
-\[
-G_{\text{paralela}} = G1 + G2
-\]
+**G_paralela = G1 + G2**
 
-Esto crea un único bloque equivalente denominado \( Gparalela \).
+Esto crea un único bloque equivalente, denominado **G_paralela**.
 
 ---
 
 ### Paso 3: Análisis del lazo de retroalimentación
-El sistema incluye una **retroalimentación negativa** con los bloques \( G3 \) y \( G4 \). Para simplificar este lazo, aplicamos la fórmula de retroalimentación negativa:
+El sistema incluye un lazo de retroalimentación negativa con los bloques G3 y G4. Para simplificar este lazo, usamos la fórmula:
 
-\[
-G_{\text{retroalimentación}} = \frac{G_{\text{directa}}}{1 + G_{\text{directa}} \cdot G_{\text{retroalimentación}}}
-\]
+**G_retro = G_directa / (1 + G_directa * G_feedback)**
 
 En este caso:
-- \( Gdirecta = Gparalela \).
-- \( Gretroalimentacion = G3 \cdot G4 \).
+- G_directa = G_paralela
+- G_feedback = G3 * G4
 
-Sustituyendo, tenemos:
+Sustituyendo, obtenemos:
 
-\[
-G_{\text{retroalimentación}} = \frac{G1 + G2}{1 + (G1 + G2) \cdot G3 \cdot G4}
-\]
+**G_retro = (G1 + G2) / [1 + (G1 + G2) * G3 * G4]**
 
 ---
 
 ### Paso 4: Función de transferencia total
-Finalmente, la función de transferencia total \( C(s)/R(s) \) es igual a \( Gretroalimentacion \):
+Finalmente, la función de transferencia total del sistema es:
 
-\[
-\frac{C(s)}{R(s)} = \frac{G1 + G2}{1 + (G1 + G2) \cdot G3 \cdot G4}
-\]
+**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * G3 * G4]**
 
 ---
 
 ## Resultado Final
-La **función de transferencia total** del sistema es:
+La función de transferencia total es:
 
-\[
-\frac{C(s)}{R(s)} = \frac{G1 + G2}{1 + (G1 + G2) \cdot G3 \cdot G4}
-\]
+**C(s) / R(s) = (G1 + G2) / [1 + (G1 + G2) * G3 * G4]**
 
 ---
 
 ## Notas
-- Este procedimiento detalla cada paso necesario para simplificar el diagrama de bloques y encontrar la función de transferencia.
-- El resultado es completamente simbólico y puede adaptarse a sistemas similares cambiando los valores de \( G1, G2, G3, \) y \( G4 \).
-
+- Este procedimiento detalla cada paso necesario para simplificar el diagrama de bloques.
+- El resultado es simbólico y puede adaptarse a sistemas similares modificando los valores de G1, G2, G3 y G4.
