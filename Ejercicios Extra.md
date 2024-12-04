@@ -60,9 +60,8 @@ La función de transferencia total es:
 
 ---
 
-## Notas
-- Este procedimiento detalla cada paso necesario para simplificar el diagrama de bloques.
-- Los términos han sido simplificados para mayor claridad:
-  - **Retroalimentación Total** se refiere a \( G3 \cdot G4 \).
-  - **Ganancia Directa** es \( G1 + G2 \).
-- Este método es general y puede aplicarse a sistemas similares.
+## Conclusiones
+1. El diagrama de bloques fue simplificado de manera eficiente aplicando las propiedades de combinaciones en paralelo y retroalimentación negativa.
+2. El uso de conceptos como **Ganancia Directa** y **Retroalimentación Total** permitió reducir el sistema a una fórmula única, facilitando el análisis.
+3. Este método puede aplicarse a sistemas similares con configuraciones de bloques más complejas, siguiendo los pasos de simplificación uno a uno.
+4. La función de transferencia obtenida describe cómo la salida \( C(s) \) responde a una entrada \( R(s) \) considerando todas las interacciones internas del sistema.
