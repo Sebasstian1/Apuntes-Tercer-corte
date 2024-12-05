@@ -72,58 +72,76 @@ La función de transferencia total del sistema es:
 
 
 # EJERCICIO 2
-
 # Ejercicio de la Regla de Mason
 
-## Diagrama de Bloques
+## Descripción del Sistema
 
-El sistema tiene tres bloques \( G_1 \), \( G_2 \), y \( G_3 \), con tres lazos de retroalimentación \( H_1 \), \( H_2 \), y \( H_3 \). El diagrama de bloques es el siguiente:
+En este ejercicio, tenemos un sistema con tres bloques de ganancia \( G_1 \), \( G_2 \), \( G_3 \), y tres lazos de retroalimentación \( H_1 \), \( H_2 \), \( H_3 \). El objetivo es encontrar la función de transferencia del sistema utilizando la regla de Mason.
 
-- \( X(s) \) es la entrada del sistema.
-- \( Y(s) \) es la salida del sistema.
-- Los lazos de retroalimentación están presentes en los bloques \( G_1 \), \( G_2 \), y \( G_3 \) con \( H_1 \), \( H_2 \), y \( H_3 \), respectivamente.
+### Diagrama de Bloques
+
+El sistema tiene la siguiente estructura:
+
+- **Entrada:** \( X(s) \)
+- **Salida:** \( Y(s) \)
+- **Bloques de ganancia:** \( G_1 \), \( G_2 \), \( G_3 \)
+- **Lazos de retroalimentación:** \( H_1 \), \( H_2 \), \( H_3 \)
+
+El diagrama de bloques muestra las interacciones entre los bloques y los lazos de retroalimentación.
 
 ## Regla de Mason
 
-La **Regla de Mason** se utiliza para encontrar la función de transferencia de un sistema con retroalimentación. La fórmula general es:
+La regla de Mason se utiliza para calcular la función de transferencia \( G(s) \) de un sistema con retroalimentación. La fórmula general para la función de transferencia es la siguiente:
+
+**Función de Transferencia General:**
+
+La función de transferencia \( G(s) \) de un sistema con retroalimentación se obtiene con la siguiente fórmula:
+
+1. El **numerador** es la suma de las ganancias de las rutas directas (del origen de la entrada hasta la salida), considerando todos los lazos de retroalimentación.
+   
+2. El **denominador** es 1 más la suma de los productos de cada lazo de retroalimentación que afecta al sistema, considerando las interacciones de los bloques de ganancia con los lazos de retroalimentación.
+
+### Numerador
+
+El numerador de la función de transferencia está compuesto por las rutas directas desde la entrada \( X(s) \) hasta la salida \( Y(s) \), considerando las interacciones de los bloques y los lazos de retroalimentación. Para este sistema, tenemos dos rutas:
+
+1. La ruta directa que va desde la entrada \( X(s) \) a la salida \( Y(s) \) pasando por los tres bloques \( G_1 \), \( G_2 \), y \( G_3 \).
+2. La ruta que pasa solo por los bloques \( G_1 \) y \( G_3 \).
+
+Por lo tanto, el numerador es la suma de las siguientes rutas:
+
+- \( G_1 G_2 G_3 \)
+- \( G_1 G_3 \)
+
+### Denominador
+
+El denominador se obtiene considerando los lazos de retroalimentación y sus interacciones. Los términos involucrados son:
+
+1. El primer término corresponde a la interacción de los lazos de retroalimentación \( H_1 \), \( H_2 \), y \( H_3 \).
+2. El segundo término es la interacción de los bloques \( G_1 \) y \( G_2 \) con \( H_1 \).
+3. El tercer término corresponde a la interacción entre los bloques \( G_2 \) y \( G_3 \) con los lazos de retroalimentación \( H_2 \) y \( H_3 \).
+4. El cuarto término involucra la interacción de todos los bloques y lazos de retroalimentación \( H_1 \), \( H_2 \), y \( H_3 \).
+
+Por lo tanto, el denominador se expresa como la suma de los siguientes términos:
+
+- 1
+- \( G_2 H_2 \)
+- \( G_3 H_3 \)
+- \( G_1 G_2 H_1 \)
+- \( G_2 G_3 H_2 H_3 \)
+- \( G_1 G_2 G_3 H_1 H_2 H_3 \)
+
+### Función de Transferencia Final
+
+Finalmente, la función de transferencia del sistema es la relación entre el numerador y el denominador. Se puede escribir de la siguiente forma:
 
 **Función de Transferencia:**
 
-La función de transferencia \( G(s) \) se calcula con la siguiente fórmula:
+\[
+G(s) = \frac{G_1 G_2 G_3 + G_1 G_3}{1 + G_2 H_2 + G_3 H_3 + G_1 G_2 H_1 + G_2 G_3 H_2 H_3 + G_1 G_2 G_3 H_1 H_2 H_3}
+\]
 
-**Numerador:**
+Este es el resultado final de la función de transferencia utilizando la regla de Mason.
 
-El numerador está compuesto por las rutas directas desde la entrada \( X(s) \) hasta la salida \( Y(s) \). En este caso, tenemos dos rutas:
-
-1. La ruta \( G_1 G_2 G_3 \), que pasa por los tres bloques.
-2. La ruta \( G_1 G_3 \), que pasa solo por los bloques \( G_1 \) y \( G_3 \).
-
-Por lo tanto, el numerador es:
-
-- \( (G_1 G_2 G_3)(1) + (G_1 G_3)(1) \)
-
-**Denominador:**
-
-El denominador se calcula considerando los lazos de retroalimentación y las interacciones entre los bloques. Se obtiene al sumar los siguientes términos:
-
-1. El primer término es **1**, que corresponde a la entrada del sistema.
-2. El segundo término es \( G_2 H_2 \), que corresponde al lazo de retroalimentación de \( G_2 \) y \( H_2 \).
-3. El tercer término es \( G_3 H_3 \), que corresponde al lazo de retroalimentación de \( G_3 \) y \( H_3 \).
-4. El cuarto término es \( G_1 G_2 H_1 \), que corresponde a la interacción entre \( G_1 \), \( G_2 \), y el lazo de retroalimentación \( H_1 \).
-5. El quinto término es \( G_2 G_3 H_2 H_3 \), que corresponde a la interacción entre \( G_2 \), \( G_3 \), y los lazos de retroalimentación \( H_2 \) y \( H_3 \).
-6. El sexto término es \( G_1 G_2 G_3 H_1 H_2 H_3 \), que corresponde a la interacción entre todos los bloques y todos los lazos de retroalimentación.
-
-El denominador es:
-
-- \( 1 + G_2 H_2 + G_3 H_3 + G_1 G_2 H_1 + G_2 G_3 H_2 H_3 + G_1 G_2 G_3 H_1 H_2 H_3 \)
-
-**Función de Transferencia Final:**
-
-Finalmente, la función de transferencia del sistema es la relación entre el numerador y el denominador:
-
-- \( G(s) = \frac{(G_1 G_2 G_3)(1) + (G_1 G_3)(1)}{1 + G_2 H_2 + G_3 H_3 + G_1 G_2 H_1 + G_2 G_3 H_2 H_3 + G_1 G_2 G_3 H_1 H_2 H_3} \)
-
-### Notas:
-- Reemplaza `ruta-del-diagrama.png` con la URL o ubicación exacta del diagrama en tu repositorio.
 
 
