@@ -4,9 +4,9 @@
 Determinar la función de transferencia total C(s)/R(s) del sistema dado.
 
 ## Diagrama Inicial
-*(Incluye aquí el diagrama de bloques proporcionado como una imagen).*
 
----
+![image](https://github.com/user-attachments/assets/93f7e654-f39a-416c-a973-5063d7461ec7)
+
 
 ## Solución Paso a Paso
 
