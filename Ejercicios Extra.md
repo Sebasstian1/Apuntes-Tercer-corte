@@ -80,7 +80,8 @@ Determinar la función de transferencia total **Y(s)/X(s)** del sistema utilizan
 
 ## Diagrama Inicial
 
-![Diagrama de Bloques](ruta-del-diagrama.png)
+![image](https://github.com/user-attachments/assets/c0fa0e49-72ee-40af-980e-d06e07ba556a)
+
 
 ---
 
