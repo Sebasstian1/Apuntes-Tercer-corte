@@ -69,10 +69,11 @@ La función de transferencia total del sistema es:
 
 
 
+
 # Resolución del Diagrama con la Regla de Mason
 
 ## Objetivo
-Determinar la función de transferencia total \( Y(s)/X(s) \) del sistema utilizando la **Regla de Mason**.
+Determinar la función de transferencia total \( \frac{Y(s)}{X(s)} \) del sistema utilizando la **Regla de Mason**.
 
 ## Diagrama Inicial
 
@@ -109,7 +110,7 @@ Los **lazos individuales** del sistema son aquellos en los que una señal regres
 ### Paso 3: Ganancia de trayectorias no tocadas
 No hay lazos que sean independientes entre sí (lazos no tocados).
 
-### Paso 4: Determinación del determinante total (\( \Delta \))
+### Paso 4: Determinante total (\( \Delta \))
 El determinante del sistema (\( \Delta \)) se calcula como:
 
 \[
@@ -117,31 +118,31 @@ El determinante del sistema (\( \Delta \)) se calcula como:
 \]
 
 ### Paso 5: Determinante para cada trayectoria (\( \Delta_i \))
-Para esta solución, cada \( \Delta_i \) es igual a \( \Delta \), ya que no hay lazos que afecten de forma independiente las trayectorias hacia adelante.
+En este caso, como no hay lazos independientes entre las trayectorias, el determinante para cada una de las trayectorias es igual al determinante total \( \Delta \).
 
 ### Paso 6: Función de transferencia total
 Usando la fórmula de la **Regla de Mason**:
 
 \[
-Y(s)/X(s) = \frac{\sum_{i=1}^N P_i \cdot \Delta_i}{\Delta}
+\frac{Y(s)}{X(s)} = \frac{\sum_{i=1}^N P_i \cdot \Delta_i}{\Delta}
 \]
 
 Sustituyendo los valores obtenidos:
 
 \[
-Y(s)/X(s) = \frac{P_1}{\Delta}
+\frac{Y(s)}{X(s)} = \frac{P_1}{\Delta}
 \]
 
 Sustituyendo \( P_1 \) y \( \Delta \):
 
 \[
-Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 - (L_1 + L_2 + L_3)}
+\frac{Y(s)}{X(s)} = \frac{G_1 \cdot G_2 \cdot G_3}{1 - (L_1 + L_2 + L_3)}
 \]
 
 Sustituyendo los valores de \( L_1, L_2, L_3 \):
 
 \[
-Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
+\frac{Y(s)}{X(s)} = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
 \]
 
 ---
@@ -150,7 +151,7 @@ Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
 La función de transferencia total del sistema es:
 
 \[
-Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
+\frac{Y(s)}{X(s)} = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
 \]
 
 ---
@@ -161,3 +162,4 @@ Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
 3. La estructura del sistema se respetó, facilitando la identificación de trayectorias hacia adelante y lazos individuales.
 
 ---
+
