@@ -69,65 +69,79 @@ La función de transferencia total del sistema es:
 
 
 
-# Resolución de Diagrama de Bloques
+# Resolución del Diagrama con la Regla de Mason
 
 ## Objetivo
-Determinar la función de transferencia total \( Y(s)/X(s) \) para el sistema dado en el diagrama.
+Determinar la función de transferencia total \( Y(s)/X(s) \) del sistema utilizando la **Regla de Mason**.
 
 ## Diagrama Inicial
 
-![Diagrama de Bloques](ruta_del_diagrama) <!-- Sustituye 'ruta_del_diagrama' por el enlace o ruta de tu imagen -->
+![Diagrama de Flujo de Señal](ruta_del_diagrama) <!-- Sustituye 'ruta_del_diagrama' con el enlace o ruta de la imagen -->
 
 ## Solución Paso a Paso
 
-### Paso 1: Identificación de elementos clave
-El sistema incluye:
-- **Entrada**: \( X(s) \).
-- **Salida**: \( Y(s) \).
-- **Bloques individuales**:
-  - \( G_1, G_2, G_3 \): Bloques de ganancia directa.
-  - \( H_1, H_2, H_3 \): Bloques en la retroalimentación negativa.
+### Paso 1: Identificación de trayectorias hacia adelante
+La **Regla de Mason** requiere identificar todas las trayectorias hacia adelante del sistema:
 
----
+1. **Trayectoria \( P_1 \):**
+   \[
+   P_1 = G_1 \cdot G_2 \cdot G_3
+   \]
 
-### Paso 2: Simplificación del primer lazo de retroalimentación
-La retroalimentación negativa formada por \( G_1 \) y \( H_1 \) se simplifica utilizando la fórmula de retroalimentación:
+### Paso 2: Identificación de lazos individuales
+Los **lazos individuales** del sistema son aquellos en los que una señal regresa al mismo nodo sin cruzarse. En este caso:
+
+1. **Lazo \( L_1 \):**
+   \[
+   L_1 = -G_1 \cdot H_1
+   \]
+
+2. **Lazo \( L_2 \):**
+   \[
+   L_2 = -G_2 \cdot H_2
+   \]
+
+3. **Lazo \( L_3 \):**
+   \[
+   L_3 = -G_3 \cdot H_3
+   \]
+
+### Paso 3: Ganancia de trayectorias no tocadas
+No hay lazos que sean independientes entre sí (lazos no tocados).
+
+### Paso 4: Determinación del determinante total (\( \Delta \))
+El determinante del sistema (\( \Delta \)) se calcula como:
 
 \[
-T_1 = \frac{G_1}{1 + G_1 H_1}
+\Delta = 1 - (L_1 + L_2 + L_3)
 \]
 
----
+### Paso 5: Determinante para cada trayectoria (\( \Delta_i \))
+Para esta solución, cada \( \Delta_i \) es igual a \( \Delta \), ya que no hay lazos que afecten de forma independiente las trayectorias hacia adelante.
 
-### Paso 3: Simplificación del segundo lazo de retroalimentación
-La salida del bloque \( G_2 \) tiene una retroalimentación negativa a través de \( H_2 \). Aplicamos la fórmula de retroalimentación nuevamente:
+### Paso 6: Función de transferencia total
+Usando la fórmula de la **Regla de Mason**:
 
 \[
-T_2 = \frac{G_2}{1 + G_2 H_2}
+Y(s)/X(s) = \frac{\sum_{i=1}^N P_i \cdot \Delta_i}{\Delta}
 \]
 
----
-
-### Paso 4: Simplificación del tercer lazo de retroalimentación
-Finalmente, consideramos el bloque \( G_3 \) con retroalimentación negativa a través de \( H_3 \). La simplificación es:
+Sustituyendo los valores obtenidos:
 
 \[
-T_3 = \frac{G_3}{1 + G_3 H_3}
+Y(s)/X(s) = \frac{P_1}{\Delta}
 \]
 
----
-
-### Paso 5: Combinación en serie
-Los bloques simplificados \( T_1 \), \( T_2 \), y \( T_3 \) están en serie. La ganancia total del sistema se obtiene multiplicando las transferencias en serie:
+Sustituyendo \( P_1 \) y \( \Delta \):
 
 \[
-Y(s)/X(s) = T_1 \cdot T_2 \cdot T_3
+Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 - (L_1 + L_2 + L_3)}
 \]
 
-Sustituyendo los valores de \( T_1, T_2, \) y \( T_3 \), tenemos:
+Sustituyendo los valores de \( L_1, L_2, L_3 \):
 
 \[
-Y(s)/X(s) = \frac{G_1}{1 + G_1 H_1} \cdot \frac{G_2}{1 + G_2 H_2} \cdot \frac{G_3}{1 + G_3 H_3}
+Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
 \]
 
 ---
@@ -136,17 +150,14 @@ Y(s)/X(s) = \frac{G_1}{1 + G_1 H_1} \cdot \frac{G_2}{1 + G_2 H_2} \cdot \frac{G_
 La función de transferencia total del sistema es:
 
 \[
-Y(s)/X(s) = \frac{G_1}{1 + G_1 H_1} \cdot \frac{G_2}{1 + G_2 H_2} \cdot \frac{G_3}{1 + G_3 H_3}
+Y(s)/X(s) = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
 \]
 
 ---
 
 ## Conclusiones
-1. El sistema se resolvió aplicando las propiedades de retroalimentación negativa y combinaciones en serie.
-2. La descomposición paso a paso permitió simplificar el análisis y reducir el diagrama a una función de transferencia única.
-3. Este método es útil para analizar sistemas más complejos al dividir el problema en partes manejables.
+1. La **Regla de Mason** simplifica la resolución de sistemas representados mediante diagramas de flujo de señal.
+2. Este análisis permitió obtener la función de transferencia total considerando todos los lazos de retroalimentación del sistema.
+3. La estructura del sistema se respetó, facilitando la identificación de trayectorias hacia adelante y lazos individuales.
 
 ---
-
-
-
