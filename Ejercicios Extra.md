@@ -65,3 +65,88 @@ La función de transferencia total del sistema es:
 2. El uso de conceptos como **Ganancia Directa** y **Retroalimentación Total** permitió reducir el sistema a una fórmula única, facilitando el análisis.
 3. Este método puede aplicarse a sistemas similares con configuraciones de bloques más complejas, siguiendo los pasos de simplificación uno a uno.
 4. La función de transferencia obtenida describe cómo la salida C(s) responde a una entrada R(s) considerando todas las interacciones internas del sistema.
+
+
+
+
+# Resolución de Diagrama de Bloques
+
+## Objetivo
+Determinar la función de transferencia total \( Y(s)/X(s) \) para el sistema dado en el diagrama.
+
+## Diagrama Inicial
+
+![Diagrama de Bloques](ruta_del_diagrama) <!-- Sustituye 'ruta_del_diagrama' por el enlace o ruta de tu imagen -->
+
+## Solución Paso a Paso
+
+### Paso 1: Identificación de elementos clave
+El sistema incluye:
+- **Entrada**: \( X(s) \).
+- **Salida**: \( Y(s) \).
+- **Bloques individuales**:
+  - \( G_1, G_2, G_3 \): Bloques de ganancia directa.
+  - \( H_1, H_2, H_3 \): Bloques en la retroalimentación negativa.
+
+---
+
+### Paso 2: Simplificación del primer lazo de retroalimentación
+La retroalimentación negativa formada por \( G_1 \) y \( H_1 \) se simplifica utilizando la fórmula de retroalimentación:
+
+\[
+T_1 = \frac{G_1}{1 + G_1 H_1}
+\]
+
+---
+
+### Paso 3: Simplificación del segundo lazo de retroalimentación
+La salida del bloque \( G_2 \) tiene una retroalimentación negativa a través de \( H_2 \). Aplicamos la fórmula de retroalimentación nuevamente:
+
+\[
+T_2 = \frac{G_2}{1 + G_2 H_2}
+\]
+
+---
+
+### Paso 4: Simplificación del tercer lazo de retroalimentación
+Finalmente, consideramos el bloque \( G_3 \) con retroalimentación negativa a través de \( H_3 \). La simplificación es:
+
+\[
+T_3 = \frac{G_3}{1 + G_3 H_3}
+\]
+
+---
+
+### Paso 5: Combinación en serie
+Los bloques simplificados \( T_1 \), \( T_2 \), y \( T_3 \) están en serie. La ganancia total del sistema se obtiene multiplicando las transferencias en serie:
+
+\[
+Y(s)/X(s) = T_1 \cdot T_2 \cdot T_3
+\]
+
+Sustituyendo los valores de \( T_1, T_2, \) y \( T_3 \), tenemos:
+
+\[
+Y(s)/X(s) = \frac{G_1}{1 + G_1 H_1} \cdot \frac{G_2}{1 + G_2 H_2} \cdot \frac{G_3}{1 + G_3 H_3}
+\]
+
+---
+
+## Resultado Final
+La función de transferencia total del sistema es:
+
+\[
+Y(s)/X(s) = \frac{G_1}{1 + G_1 H_1} \cdot \frac{G_2}{1 + G_2 H_2} \cdot \frac{G_3}{1 + G_3 H_3}
+\]
+
+---
+
+## Conclusiones
+1. El sistema se resolvió aplicando las propiedades de retroalimentación negativa y combinaciones en serie.
+2. La descomposición paso a paso permitió simplificar el análisis y reducir el diagrama a una función de transferencia única.
+3. Este método es útil para analizar sistemas más complejos al dividir el problema en partes manejables.
+
+---
+
+
+
