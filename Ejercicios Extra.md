@@ -70,6 +70,7 @@ La función de transferencia total del sistema es:
 
 
 
+
 # Resolución del Diagrama con la Regla de Mason
 
 ## Objetivo
@@ -78,6 +79,8 @@ Determinar la función de transferencia total \( \frac{Y(s)}{X(s)} \) del sistem
 ## Diagrama Inicial
 
 ![Diagrama de Flujo de Señal](ruta_del_diagrama) <!-- Sustituye 'ruta_del_diagrama' con el enlace o ruta de la imagen -->
+
+---
 
 ## Solución Paso a Paso
 
@@ -89,8 +92,10 @@ La **Regla de Mason** requiere identificar todas las trayectorias hacia adelante
    P_1 = G_1 \cdot G_2 \cdot G_3
    \]
 
+---
+
 ### Paso 2: Identificación de lazos individuales
-Los **lazos individuales** del sistema son aquellos en los que una señal regresa al mismo nodo sin cruzarse. En este caso:
+Los **lazos individuales** del sistema son aquellos en los que una señal regresa al mismo nodo sin cruzarse:
 
 1. **Lazo \( L_1 \):**
    \[
@@ -107,8 +112,12 @@ Los **lazos individuales** del sistema son aquellos en los que una señal regres
    L_3 = -G_3 \cdot H_3
    \]
 
+---
+
 ### Paso 3: Ganancia de trayectorias no tocadas
-No hay lazos que sean independientes entre sí (lazos no tocados).
+No hay lazos independientes entre sí (lazos no tocados en este sistema).
+
+---
 
 ### Paso 4: Determinante total (\( \Delta \))
 El determinante del sistema (\( \Delta \)) se calcula como:
@@ -117,8 +126,12 @@ El determinante del sistema (\( \Delta \)) se calcula como:
 \Delta = 1 - (L_1 + L_2 + L_3)
 \]
 
+---
+
 ### Paso 5: Determinante para cada trayectoria (\( \Delta_i \))
 En este caso, como no hay lazos independientes entre las trayectorias, el determinante para cada una de las trayectorias es igual al determinante total \( \Delta \).
+
+---
 
 ### Paso 6: Función de transferencia total
 Usando la fórmula de la **Regla de Mason**:
@@ -127,7 +140,7 @@ Usando la fórmula de la **Regla de Mason**:
 \frac{Y(s)}{X(s)} = \frac{\sum_{i=1}^N P_i \cdot \Delta_i}{\Delta}
 \]
 
-Sustituyendo los valores obtenidos:
+En este caso:
 
 \[
 \frac{Y(s)}{X(s)} = \frac{P_1}{\Delta}
