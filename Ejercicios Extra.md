@@ -80,7 +80,8 @@ Determinar la función de transferencia total G(s) del sistema dado utilizando l
 
 ## Diagrama Inicial
 
-![image](ruta_a_tu_imagen.png)
+![image](https://github.com/user-attachments/assets/7859b619-e9a8-4b1c-9dc0-bbab6726a391)
+
 
 ## Solución Paso a Paso
 
