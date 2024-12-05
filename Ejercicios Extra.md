@@ -1,3 +1,5 @@
+#EJERCICIO 1
+
 # Resolución de Diagrama de Bloques
 
 ## Objetivo
@@ -69,7 +71,7 @@ La función de transferencia total del sistema es:
 
 
 
-
+# EJERCICIO 2
 
 # Resolución del Diagrama con la Regla de Mason
 
