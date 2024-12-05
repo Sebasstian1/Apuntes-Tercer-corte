@@ -74,105 +74,86 @@ La función de transferencia total del sistema es:
 # Resolución del Diagrama con la Regla de Mason
 
 ## Objetivo
-Determinar la función de transferencia total \( \frac{Y(s)}{X(s)} \) del sistema utilizando la **Regla de Mason**.
+Determinar la función de transferencia total **Y(s)/X(s)** del sistema utilizando la **Regla de Mason**.
+
+---
 
 ## Diagrama Inicial
 
-![Diagrama de Flujo de Señal](ruta_del_diagrama) <!-- Sustituye 'ruta_del_diagrama' con el enlace o ruta de la imagen -->
+![Diagrama de Bloques](ruta-del-diagrama.png)
 
 ---
 
 ## Solución Paso a Paso
 
 ### Paso 1: Identificación de trayectorias hacia adelante
-La **Regla de Mason** requiere identificar todas las trayectorias hacia adelante del sistema:
+Las trayectorias hacia adelante son las rutas que conectan la entrada X(s) con la salida Y(s) sin regresar a un nodo previo:
 
-1. **Trayectoria \( P_1 \):**
-   \[
-   P_1 = G_1 \cdot G_2 \cdot G_3
-   \]
+- Trayectoria P1: G1 × G2 × G3.
 
 ---
 
 ### Paso 2: Identificación de lazos individuales
-Los **lazos individuales** del sistema son aquellos en los que una señal regresa al mismo nodo sin cruzarse:
+Los lazos individuales son aquellos en los que una señal regresa al mismo nodo. Para este sistema, los lazos son:
 
-1. **Lazo \( L_1 \):**
-   \[
-   L_1 = -G_1 \cdot H_1
-   \]
-
-2. **Lazo \( L_2 \):**
-   \[
-   L_2 = -G_2 \cdot H_2
-   \]
-
-3. **Lazo \( L_3 \):**
-   \[
-   L_3 = -G_3 \cdot H_3
-   \]
+1. Lazo L1: - G1 × H1  
+2. Lazo L2: - G2 × H2  
+3. Lazo L3: - G3 × H3
 
 ---
 
-### Paso 3: Ganancia de trayectorias no tocadas
-No hay lazos independientes entre sí (lazos no tocados en este sistema).
+### Paso 3: Determinante total (Δ)
+El determinante del sistema, que se representa como Δ, se calcula con la fórmula:
+
+Δ = 1 - (Suma de los lazos individuales)
+
+Sustituyendo los valores de los lazos:
+
+Δ = 1 + (G1 × H1) + (G2 × H2) + (G3 × H3)
 
 ---
 
-### Paso 4: Determinante total (\( \Delta \))
-El determinante del sistema (\( \Delta \)) se calcula como:
+### Paso 4: Determinante para cada trayectoria (Δi)
+En este caso, no hay lazos independientes entre las trayectorias hacia adelante, por lo que:
 
-\[
-\Delta = 1 - (L_1 + L_2 + L_3)
-\]
+Δ1 = Δ
 
 ---
 
-### Paso 5: Determinante para cada trayectoria (\( \Delta_i \))
-En este caso, como no hay lazos independientes entre las trayectorias, el determinante para cada una de las trayectorias es igual al determinante total \( \Delta \).
+### Paso 5: Función de transferencia total
+La función de transferencia total se obtiene usando la fórmula general de la **Regla de Mason**:
 
----
+Y(s)/X(s) = (Suma de cada trayectoria hacia adelante (Pi) × Δi) / Δ
 
-### Paso 6: Función de transferencia total
-Usando la fórmula de la **Regla de Mason**:
+Para este sistema:
 
-\[
-\frac{Y(s)}{X(s)} = \frac{\sum_{i=1}^N P_i \cdot \Delta_i}{\Delta}
-\]
+Y(s)/X(s) = (P1 × Δ1) / Δ
 
-En este caso:
+Sustituyendo P1 y Δ1:
 
-\[
-\frac{Y(s)}{X(s)} = \frac{P_1}{\Delta}
-\]
+Y(s)/X(s) = (G1 × G2 × G3) / Δ
 
-Sustituyendo \( P_1 \) y \( \Delta \):
+Finalmente, sustituyendo el valor de Δ:
 
-\[
-\frac{Y(s)}{X(s)} = \frac{G_1 \cdot G_2 \cdot G_3}{1 - (L_1 + L_2 + L_3)}
-\]
-
-Sustituyendo los valores de \( L_1, L_2, L_3 \):
-
-\[
-\frac{Y(s)}{X(s)} = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
-\]
+Y(s)/X(s) = (G1 × G2 × G3) / [1 + (G1 × H1) + (G2 × H2) + (G3 × H3)]
 
 ---
 
 ## Resultado Final
 La función de transferencia total del sistema es:
 
-\[
-\frac{Y(s)}{X(s)} = \frac{G_1 \cdot G_2 \cdot G_3}{1 + G_1 H_1 + G_2 H_2 + G_3 H_3}
-\]
+Y(s)/X(s) = (G1 × G2 × G3) / [1 + (G1 × H1) + (G2 × H2) + (G3 × H3)]
 
 ---
 
 ## Conclusiones
-1. La **Regla de Mason** simplifica la resolución de sistemas representados mediante diagramas de flujo de señal.
-2. Este análisis permitió obtener la función de transferencia total considerando todos los lazos de retroalimentación del sistema.
-3. La estructura del sistema se respetó, facilitando la identificación de trayectorias hacia adelante y lazos individuales.
+1. La **Regla de Mason** permite calcular la función de transferencia de manera sistemática.
+2. En este sistema, los lazos de retroalimentación agregan términos al denominador, que representan sus efectos acumulativos.
+3. Este análisis asegura que todas las trayectorias y lazos sean considerados de forma adecuada.
 
 ---
+
+### Notas:
+- Reemplaza `ruta-del-diagrama.png` con la URL o ubicación exacta del diagrama en tu repositorio.
+
 
