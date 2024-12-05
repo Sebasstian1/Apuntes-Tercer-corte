@@ -72,76 +72,71 @@ La función de transferencia total del sistema es:
 
 
 # EJERCICIO 2
-# Ejercicio de la Regla de Mason
 
-## Descripción del Sistema
+# Resolución de Diagrama de Bloques - Regla de Mason
 
-En este ejercicio, tenemos un sistema con tres bloques de ganancia \( G_1 \), \( G_2 \), \( G_3 \), y tres lazos de retroalimentación \( H_1 \), \( H_2 \), \( H_3 \). El objetivo es encontrar la función de transferencia del sistema utilizando la regla de Mason.
+## Objetivo
+Determinar la función de transferencia total G(s) del sistema dado utilizando la regla de Mason.
 
-### Diagrama de Bloques
+## Diagrama Inicial
 
-El sistema tiene la siguiente estructura:
+![image](ruta_a_tu_imagen.png)
 
-- **Entrada:** \( X(s) \)
-- **Salida:** \( Y(s) \)
-- **Bloques de ganancia:** \( G_1 \), \( G_2 \), \( G_3 \)
-- **Lazos de retroalimentación:** \( H_1 \), \( H_2 \), \( H_3 \)
+## Solución Paso a Paso
 
-El diagrama de bloques muestra las interacciones entre los bloques y los lazos de retroalimentación.
+### Paso 1: Identificación de elementos clave
+El sistema incluye:
+- **Entrada**: X(s).
+- **Salida**: Y(s).
+- **Bloques individuales**:
+  - G1: Bloque de ganancia G1.
+  - G2: Bloque de ganancia G2.
+  - G3: Bloque de ganancia G3.
+  - H1: Bloque de retroalimentación H1.
+  - H2: Bloque de retroalimentación H2.
+  - H3: Bloque de retroalimentación H3.
 
-## Regla de Mason
+### Paso 2: Aplicación de la regla de Mason
+La regla de Mason establece que la función de transferencia de un sistema con retroalimentación es:
 
-La regla de Mason se utiliza para calcular la función de transferencia \( G(s) \) de un sistema con retroalimentación. La fórmula general para la función de transferencia es la siguiente:
+**G(s) = (Suma de productos de las ganancias de los caminos no tocados por un bucle) / (1 + Suma de productos de las ganancias de los caminos tocados por un bucle)**
 
-**Función de Transferencia General:**
+#### Numerador:
+- La primera parte del numerador corresponde al producto de las ganancias de los caminos no tocados por un bucle:
+  - **G1 * G2 * G3** y **G1 * G3**.
 
-La función de transferencia \( G(s) \) de un sistema con retroalimentación se obtiene con la siguiente fórmula:
+Por lo tanto, el numerador es:
 
-1. El **numerador** es la suma de las ganancias de las rutas directas (del origen de la entrada hasta la salida), considerando todos los lazos de retroalimentación.
-   
-2. El **denominador** es 1 más la suma de los productos de cada lazo de retroalimentación que afecta al sistema, considerando las interacciones de los bloques de ganancia con los lazos de retroalimentación.
+**G1 * G2 * G3 + G1 * G3**
 
-### Numerador
+#### Denominador:
+- El denominador corresponde a la suma de los efectos de los bucles:
+  - **1**: El término básico.
+  - **G2 * H2**: Producto del camino con retroalimentación H2.
+  - **G3 * H3**: Producto del camino con retroalimentación H3.
+  - **G1 * G2 * H1**: Producto del camino con retroalimentación H1.
+  - **G2 * G3 * H2 * H3**: Producto de los caminos con retroalimentación combinada.
+  - **G1 * G2 * G3 * H1 * H2 * H3**: Producto de todos los caminos con retroalimentación combinada.
 
-El numerador de la función de transferencia está compuesto por las rutas directas desde la entrada \( X(s) \) hasta la salida \( Y(s) \), considerando las interacciones de los bloques y los lazos de retroalimentación. Para este sistema, tenemos dos rutas:
+Por lo tanto, el denominador es:
 
-1. La ruta directa que va desde la entrada \( X(s) \) a la salida \( Y(s) \) pasando por los tres bloques \( G_1 \), \( G_2 \), y \( G_3 \).
-2. La ruta que pasa solo por los bloques \( G_1 \) y \( G_3 \).
+**1 + G2 * H2 + G3 * H3 + G1 * G2 * H1 + G2 * G3 * H2 * H3 + G1 * G2 * G3 * H1 * H2 * H3**
 
-Por lo tanto, el numerador es la suma de las siguientes rutas:
+### Paso 3: Función de transferencia total
+Finalmente, la función de transferencia total del sistema es la relación entre la salida Y(s) y la entrada X(s), que se obtiene de la fórmula de la regla de Mason. Por lo tanto, la función de transferencia es:
 
-- \( G_1 G_2 G_3 \)
-- \( G_1 G_3 \)
+**G(s) = (G1 * G2 * G3 + G1 * G3) / (1 + G2 * H2 + G3 * H3 + G1 * G2 * H1 + G2 * G3 * H2 * H3 + G1 * G2 * G3 * H1 * H2 * H3)**
 
-### Denominador
+## Resultado Final
+La función de transferencia total del sistema es:
 
-El denominador se obtiene considerando los lazos de retroalimentación y sus interacciones. Los términos involucrados son:
+**G(s) = (G1 * G2 * G3 + G1 * G3) / (1 + G2 * H2 + G3 * H3 + G1 * G2 * H1 + G2 * G3 * H2 * H3 + G1 * G2 * G3 * H1 * H2 * H3)**
 
-1. El primer término corresponde a la interacción de los lazos de retroalimentación \( H_1 \), \( H_2 \), y \( H_3 \).
-2. El segundo término es la interacción de los bloques \( G_1 \) y \( G_2 \) con \( H_1 \).
-3. El tercer término corresponde a la interacción entre los bloques \( G_2 \) y \( G_3 \) con los lazos de retroalimentación \( H_2 \) y \( H_3 \).
-4. El cuarto término involucra la interacción de todos los bloques y lazos de retroalimentación \( H_1 \), \( H_2 \), y \( H_3 \).
+## Conclusiones
+1. El diagrama de bloques fue simplificado utilizando la regla de Mason para obtener la función de transferencia total.
+2. El procedimiento ha permitido derivar la ecuación general del sistema de una manera eficiente, considerando los efectos de retroalimentación en los diferentes caminos.
+3. Esta metodología es útil para sistemas más complejos que involucran varios bloques y retroalimentaciones, y puede aplicarse a sistemas con configuraciones de bloques más complejas.
 
-Por lo tanto, el denominador se expresa como la suma de los siguientes términos:
-
-- 1
-- \( G_2 H_2 \)
-- \( G_3 H_3 \)
-- \( G_1 G_2 H_1 \)
-- \( G_2 G_3 H_2 H_3 \)
-- \( G_1 G_2 G_3 H_1 H_2 H_3 \)
-
-### Función de Transferencia Final
-
-Finalmente, la función de transferencia del sistema es la relación entre el numerador y el denominador. Se puede escribir de la siguiente forma:
-
-**Función de Transferencia:**
-
-\[
-G(s) = \frac{G_1 G_2 G_3 + G_1 G_3}{1 + G_2 H_2 + G_3 H_3 + G_1 G_2 H_1 + G_2 G_3 H_2 H_3 + G_1 G_2 G_3 H_1 H_2 H_3}
-\]
-
-Este es el resultado final de la función de transferencia utilizando la regla de Mason.
 
 
 
