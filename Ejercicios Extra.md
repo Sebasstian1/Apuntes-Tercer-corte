@@ -1,4 +1,4 @@
-#EJERCICIO 1
+# EJERCICIO 1
 
 # Resolución de Diagrama de Bloques
 
