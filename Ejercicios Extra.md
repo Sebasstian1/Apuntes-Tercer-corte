@@ -73,88 +73,55 @@ La función de transferencia total del sistema es:
 
 # EJERCICIO 2
 
-# Resolución del Diagrama con la Regla de Mason
+# Ejercicio de la Regla de Mason
 
-## Objetivo
-Determinar la función de transferencia total **Y(s)/X(s)** del sistema utilizando la **Regla de Mason**.
+## Diagrama de Bloques
 
----
+El sistema tiene tres bloques \( G_1 \), \( G_2 \), y \( G_3 \), con tres lazos de retroalimentación \( H_1 \), \( H_2 \), y \( H_3 \). El diagrama de bloques es el siguiente:
 
-## Diagrama Inicial
+- \( X(s) \) es la entrada del sistema.
+- \( Y(s) \) es la salida del sistema.
+- Los lazos de retroalimentación están presentes en los bloques \( G_1 \), \( G_2 \), y \( G_3 \) con \( H_1 \), \( H_2 \), y \( H_3 \), respectivamente.
 
-![image](https://github.com/user-attachments/assets/c0fa0e49-72ee-40af-980e-d06e07ba556a)
+## Regla de Mason
 
+La **Regla de Mason** se utiliza para encontrar la función de transferencia de un sistema con retroalimentación. La fórmula general es:
 
----
+**Función de Transferencia:**
 
-## Solución Paso a Paso
+La función de transferencia \( G(s) \) se calcula con la siguiente fórmula:
 
-### Paso 1: Identificación de trayectorias hacia adelante
-Las trayectorias hacia adelante son las rutas que conectan la entrada X(s) con la salida Y(s) sin regresar a un nodo previo:
+**Numerador:**
 
-- Trayectoria P1: G1 × G2 × G3.
+El numerador está compuesto por las rutas directas desde la entrada \( X(s) \) hasta la salida \( Y(s) \). En este caso, tenemos dos rutas:
 
----
+1. La ruta \( G_1 G_2 G_3 \), que pasa por los tres bloques.
+2. La ruta \( G_1 G_3 \), que pasa solo por los bloques \( G_1 \) y \( G_3 \).
 
-### Paso 2: Identificación de lazos individuales
-Los lazos individuales son aquellos en los que una señal regresa al mismo nodo. Para este sistema, los lazos son:
+Por lo tanto, el numerador es:
 
-1. Lazo L1: - G1 × H1  
-2. Lazo L2: - G2 × H2  
-3. Lazo L3: - G3 × H3
+- \( (G_1 G_2 G_3)(1) + (G_1 G_3)(1) \)
 
----
+**Denominador:**
 
-### Paso 3: Determinante total (Δ)
-El determinante del sistema, que se representa como Δ, se calcula con la fórmula:
+El denominador se calcula considerando los lazos de retroalimentación y las interacciones entre los bloques. Se obtiene al sumar los siguientes términos:
 
-Δ = 1 - (Suma de los lazos individuales)
+1. El primer término es **1**, que corresponde a la entrada del sistema.
+2. El segundo término es \( G_2 H_2 \), que corresponde al lazo de retroalimentación de \( G_2 \) y \( H_2 \).
+3. El tercer término es \( G_3 H_3 \), que corresponde al lazo de retroalimentación de \( G_3 \) y \( H_3 \).
+4. El cuarto término es \( G_1 G_2 H_1 \), que corresponde a la interacción entre \( G_1 \), \( G_2 \), y el lazo de retroalimentación \( H_1 \).
+5. El quinto término es \( G_2 G_3 H_2 H_3 \), que corresponde a la interacción entre \( G_2 \), \( G_3 \), y los lazos de retroalimentación \( H_2 \) y \( H_3 \).
+6. El sexto término es \( G_1 G_2 G_3 H_1 H_2 H_3 \), que corresponde a la interacción entre todos los bloques y todos los lazos de retroalimentación.
 
-Sustituyendo los valores de los lazos:
+El denominador es:
 
-Δ = 1 + (G1 × H1) + (G2 × H2) + (G3 × H3)
+- \( 1 + G_2 H_2 + G_3 H_3 + G_1 G_2 H_1 + G_2 G_3 H_2 H_3 + G_1 G_2 G_3 H_1 H_2 H_3 \)
 
----
+**Función de Transferencia Final:**
 
-### Paso 4: Determinante para cada trayectoria (Δi)
-En este caso, no hay lazos independientes entre las trayectorias hacia adelante, por lo que:
+Finalmente, la función de transferencia del sistema es la relación entre el numerador y el denominador:
 
-Δ1 = Δ
-
----
-
-### Paso 5: Función de transferencia total
-La función de transferencia total se obtiene usando la fórmula general de la **Regla de Mason**:
-
-Y(s)/X(s) = (Suma de cada trayectoria hacia adelante (Pi) × Δi) / Δ
-
-Para este sistema:
-
-Y(s)/X(s) = (P1 × Δ1) / Δ
-
-Sustituyendo P1 y Δ1:
-
-Y(s)/X(s) = (G1 × G2 × G3) / Δ
-
-Finalmente, sustituyendo el valor de Δ:
-
-Y(s)/X(s) = (G1 × G2 × G3) / [1 + (G1 × H1) + (G2 × H2) + (G3 × H3)]
-
----
-
-## Resultado Final
-La función de transferencia total del sistema es:
-
-Y(s)/X(s) = (G1 × G2 × G3) / [1 + (G1 × H1) + (G2 × H2) + (G3 × H3)]
-
----
-
-## Conclusiones
-1. La **Regla de Mason** permite calcular la función de transferencia de manera sistemática.
-2. En este sistema, los lazos de retroalimentación agregan términos al denominador, que representan sus efectos acumulativos.
-3. Este análisis asegura que todas las trayectorias y lazos sean considerados de forma adecuada.
-
----
+- \( G(s) = \frac{(G_1 G_2 G_3)(1) + (G_1 G_3)(1)}{1 + G_2 H_2 + G_3 H_3 + G_1 G_2 H_1 + G_2 G_3 H_2 H_3 + G_1 G_2 G_3 H_1 H_2 H_3} \)
 
 ### Notas:
 - Reemplaza `ruta-del-diagrama.png` con la URL o ubicación exacta del diagrama en tu repositorio.
